@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuxtech.github.io/"/>
-  <updated>2019-05-10T15:17:54.334Z</updated>
+  <updated>2019-05-26T16:55:32.592Z</updated>
   <id>https://yuxtech.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mtpro2</title>
+    <link href="https://yuxtech.github.io/2019/05/27/mtpro2/"/>
+    <id>https://yuxtech.github.io/2019/05/27/mtpro2/</id>
+    <published>2019-05-26T16:49:54.000Z</published>
+    <updated>2019-05-26T16:55:32.592Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="mathtime-professional2-字体的使用问题解决"><a href="#mathtime-professional2-字体的使用问题解决" class="headerlink" title="mathtime professional2 字体的使用问题解决"></a>mathtime professional2 字体的使用问题解决</h2><p>为了录制这个视频，害得我的博客爆了，github禁止上传超过100M的文件，结果我上传视频就炸了，连续三天了，终于把博客重新搭建好了，说多了都是泪啊！<br>好了，我把视频上传了微博，再把链接给大家</p> <iframe height="400" width="400" src="http://t.cn/E9FA3Wl?m=4375953545482782&u=5994313597" frameborder="0" allowfullscreen></iframe>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;mathtime-professional2-字体的使用问题解决&quot;&gt;&lt;a href=&quot;#mathtime-professional2-字体的使用问题解决&quot; class=&quot;headerlink&quot; title=&quot;mathtime professional2 字体的使用
+      
+    
+    </summary>
+    
+    
+      <category term="LaTeX" scheme="https://yuxtech.github.io/tags/LaTeX/"/>
+    
+  </entry>
   
   <entry>
     <title>tikz绘制的分形六边形</title>
