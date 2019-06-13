@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuxtech.github.io/"/>
-  <updated>2019-05-28T06:46:58.783Z</updated>
+  <updated>2019-06-13T06:10:59.620Z</updated>
   <id>https://yuxtech.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>几个条件数学期望问题</title>
+    <link href="https://yuxtech.github.io/2019/06/13/exp/"/>
+    <id>https://yuxtech.github.io/2019/06/13/exp/</id>
+    <published>2019-06-13T06:08:31.000Z</published>
+    <updated>2019-06-13T06:10:59.620Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是整理的网上的几个条件数学期望问题,修改了一点原作的错误<br><a href="https://yuxtech.github.io/math/数学分析变态难题.pdf">几个条件期望问题</a><br><div class="row">    <embed src="https://yuxtech.github.io/math/几个条件期望问题.pdf" width="100%" height="550" type="application/pdf"></div></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这是整理的网上的几个条件数学期望问题,修改了一点原作的错误&lt;br&gt;&lt;a href=&quot;https://yuxtech.github.io/math/数学分析变态难题.pdf&quot;&gt;几个条件期望问题&lt;/a&gt;&lt;br&gt;
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed sr
+      
+    
+    </summary>
+    
+    
+      <category term="数学" scheme="https://yuxtech.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>kaoyan</title>
