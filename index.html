@@ -199,7 +199,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这是整理的网上的几个条件数学期望问题,修改了一点原作的错误<br><a href="https://yuxtech.github.io/math/数学分析变态难题.pdf">几个条件期望问题</a><br>
+        <p>这是整理的网上的几个条件数学期望问题,修改了一点原作的错误<br><a href="https://yuxtech.github.io/math/几个条件期望问题.pdf">几个条件期望问题</a><br>
 
 	<div class="row">
     <embed src="https://yuxtech.github.io/math/几个条件期望问题.pdf" width="100%" height="550" type="application/pdf">
@@ -1337,5 +1337,20 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
 </html>
