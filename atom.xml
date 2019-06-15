@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuxtech.github.io/"/>
-  <updated>2019-06-15T00:55:34.185Z</updated>
+  <updated>2019-06-15T00:56:29.910Z</updated>
   <id>https://yuxtech.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://yuxtech.github.io/2019/06/14/ink/"/>
     <id>https://yuxtech.github.io/2019/06/14/ink/</id>
     <published>2019-06-14T12:53:37.000Z</published>
-    <updated>2019-06-15T00:55:34.185Z</updated>
+    <updated>2019-06-15T00:56:29.910Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="用inkscape将矢量图（pdf）转化为ti-k-z代码"><a href="#用inkscape将矢量图（pdf）转化为ti-k-z代码" class="headerlink" title="用inkscape将矢量图（pdf）转化为ti$k$z代码"></a>用inkscape将矢量图（pdf）转化为ti$k$z代码</h1><p><a href="http://www.pc0359.cn/downinfo/15201.html" target="_blank" rel="noopener">inkscape下载地址</a><br><a href="https://github.com/halamalala/inkscape2tikz" target="_blank" rel="noopener">inkscape2tikz下载地址</a><br><a href="https://github.com/kjellmf/svg2tikz" target="_blank" rel="noopener">svg2tikz下载地址</a></p><iframe height="600" width="900" src="http://player.youku.com/embed/XNDIyODU4NDE5Mg==" frameborder="0" 'allowfullscreen'></iframe><h1 id="科大校徽设计"><a href="#科大校徽设计" class="headerlink" title="科大校徽设计"></a>科大校徽设计</h1><p>科大校徽如下</p><p><div align="center">  <img width="400" src="https://yuxtech.github.io/img/keda.png"></div><br>生成代码在这里，里面的颜色大家可以自己更改（将green!40!black替换为其他颜色即可）<br><a href="https://yuxtech.github.io/tex/keda.tex">科大校徽tikz码</a></p><p>转载请注明出处谢谢！</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="用inkscape将矢量图（pdf）转化为ti-k-z代码"><a href="#用inkscape将矢量图（pdf）转化为ti-k-z代码" class="headerlink" title="用inkscape将矢量图（pdf）转化为ti$k$z代码"></a>用inkscape将矢量图（pdf）转化为ti$k$z代码</h1><p><a href="http://www.pc0359.cn/downinfo/15201.html" target="_blank" rel="noopener">inkscape下载地址</a><br><a href="https://github.com/halamalala/inkscape2tikz" target="_blank" rel="noopener">inkscape2tikz下载地址</a><br><a href="https://github.com/kjellmf/svg2tikz" target="_blank" rel="noopener">svg2tikz下载地址</a></p><iframe height="600" width="900" src="https://player.youku.com/embed/XNDIyODU4NDE5Mg==" frameborder="0" 'allowfullscreen'></iframe><h1 id="科大校徽设计"><a href="#科大校徽设计" class="headerlink" title="科大校徽设计"></a>科大校徽设计</h1><p>科大校徽如下</p><p><div align="center">  <img width="400" src="https://yuxtech.github.io/img/keda.png"></div><br>生成代码在这里，里面的颜色大家可以自己更改（将green!40!black替换为其他颜色即可）<br><a href="https://yuxtech.github.io/tex/keda.tex">科大校徽tikz码</a></p><p>转载请注明出处谢谢！</p>]]></content>
     
     <summary type="html">
     
