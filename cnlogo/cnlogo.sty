@@ -1,0 +1,49 @@
+%cnlogo.sty
+%designed for producing logos of Chinese Colleges
+%author Yu Xiang(ustc)
+%Welcome to visit my bolg: yuxtech.github.io
+
+\ProvidesPackage{cnlogo}[2019/6/16 v1.0]
+\RequirePackage{tikz}
+\RequirePackage{xparse}
+\DeclareOption{ustc}{%
+\input{cnlogo/ustc}
+}
+\DeclareOption{fdu}{%
+\input{cnlogo/fdu}
+}
+\DeclareOption{zju}{%
+\input{cnlogo/zju}
+}
+\DeclareOption{xmu}{%
+\input{cnlogo/xmu}
+}
+\DeclareOption{pku}{%
+\input{cnlogo/pku}
+}
+\DeclareOption{whu}{%
+\input{cnlogo/whu}
+}
+\DeclareOption{thu}{%
+\input{cnlogo/thu}
+}
+\DeclareOption{sustc}{%
+\input{cnlogo/sustc}
+}
+\DeclareOption{stju}{%
+\input{cnlogo/stju}
+}
+\DeclareOption{xjtu}{%
+\input{cnlogo/xjtu}
+}
+\ProcessOptions\relax
+
+%\input{cnlogo/fdu}
+%\input{cnlogo/zju}
+%\input{cnlogo/xmu}
+%\input{cnlogo/pku}
+%\input{cnlogo/whu}
+%\input{cnlogo/sustc}
+%\input{cnlogo/thu}
+%\input{cnlogo/stju}
+%\input{cnlogo/xjtu}
