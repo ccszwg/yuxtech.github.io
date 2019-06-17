@@ -1,7 +1,7 @@
 \definecolor{pku}{RGB}{146,15,20}
 \NewDocumentCommand\pkutext{O{pku}O{1}}{
 
-\begin{tikzpicture}[y=0.80pt,x=0.80pt,yscale=-1, inner sep=0pt, outer sep=0pt]
+\begin{tikzpicture}[y=0.80pt,x=0.80pt,yscale=-1, inner sep=0pt, outer sep=0pt,scale=#2]
 \begin{scope}[cm={{1.33333,0.0,0.0,-1.33333,(0.0,200.0)}}]
   \begin{scope}[scale=0.100]
     \path[fill=#1,even odd rule] (309.3010,1296.3600) .. controls
@@ -226,4 +226,4 @@
 \end{scope}
 
 \end{tikzpicture}
-}
+} 
