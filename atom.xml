@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuxtech.github.io/"/>
-  <updated>2019-07-14T12:44:31.630Z</updated>
+  <updated>2019-07-14T12:47:06.060Z</updated>
   <id>https://yuxtech.github.io/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>tikz与tkzeuclide包平面几何绘图示例</title>
+    <title>tikz与tkz-euclide包平面几何绘图示例</title>
     <link href="https://yuxtech.github.io/2019/07/14/%E5%B9%B3%E9%9D%A2%E5%87%A0%E4%BD%95%E7%BB%98%E5%9B%BE%E7%A4%BA%E4%BE%8B/"/>
     <id>https://yuxtech.github.io/2019/07/14/平面几何绘图示例/</id>
     <published>2019-07-14T12:28:19.000Z</published>
-    <updated>2019-07-14T12:44:31.630Z</updated>
+    <updated>2019-07-14T12:47:06.060Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="tkz-euclide包平面几何绘图示例"><a href="#tkz-euclide包平面几何绘图示例" class="headerlink" title="tkz-euclide包平面几何绘图示例"></a>tkz-euclide包平面几何绘图示例</h1><p>这是我最近读法语平面几何绘图包tkz-euclide，从中把一些典型的例子挖出来。以前用tikz作图，平面几何作图确实是一大难题，现在发现了这个tkz-euclide包刚好弥补了tikz的这点。<br><a href="https://yuxtech.github.io/tex/tkz-euclide.tex">tkz-euclide包平面几何绘图.tex</a><br><a href="https://yuxtech.github.io/tex/tkz-euclide包平面几何绘图.pdf">tkz-euclide包平面几何绘图.pdf</a><br><div class="row">    <embed src="https://yuxtech.github.io/math/tkz-euclide包平面几何绘图.pdf" width="100%" height="550" type="application/pdf"></div></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="tkz-euclide包平面几何绘图示例"><a href="#tkz-euclide包平面几何绘图示例" class="headerlink" title="tkz-euclide包平面几何绘图示例"></a>tkz-euclide包平面几何绘图示例</h1><p>这是我最近读法语平面几何绘图包tkz-euclide，从中把一些典型的例子挖出来。以前用tikz作图，平面几何作图确实是一大难题，现在发现了这个tkz-euclide包刚好弥补了tikz的这点。<br><a href="https://yuxtech.github.io/tex/tkz-euclide.tex">tkz-euclide包平面几何绘图.tex</a><br><a href="https://yuxtech.github.io/tex/tkz-euclide包平面几何绘图.pdf">tkz-euclide包平面几何绘图.pdf</a><br><div class="row">    <embed src="https://yuxtech.github.io/tex/tkz-euclide包平面几何绘图.pdf" width="100%" height="550" type="application/pdf"></div></p>]]></content>
     
     <summary type="html">
     
