@@ -8,16 +8,20 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://yuxtech.github.io">
-  <title>Archives | Xiang&#39;s Texmath</title>
+  <title>宏包的重复加载与宏包选项的传递 | Xiang&#39;s Texmath</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="tex math">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Xiang&#39;s Texmath">
-<meta property="og:url" content="https://yuxtech.github.io/archives/index.html">
+  <meta name="description" content="宏包重复加载的问题很多人（多指新手）喜欢复制粘贴别人的代码，也不管代码中的宏包是干什么的，也不懂加载的宏包是干什么的，所以经常复制粘贴就出现重复加载宏包的问题。以xcolor包为例，原则上加载宏包只需要在导言区输入一次\usepackage{xcolor}即可，如果需要加载xcolor的可选项就输入\usepackage[option1,option2]{xcolor}。但是有的人使用过程中就喜欢">
+<meta name="keywords" content="LaTeX">
+<meta property="og:type" content="article">
+<meta property="og:title" content="宏包的重复加载与宏包选项的传递">
+<meta property="og:url" content="https://yuxtech.github.io/2019/08/05/package/index.html">
 <meta property="og:site_name" content="Xiang&#39;s Texmath">
+<meta property="og:description" content="宏包重复加载的问题很多人（多指新手）喜欢复制粘贴别人的代码，也不管代码中的宏包是干什么的，也不懂加载的宏包是干什么的，所以经常复制粘贴就出现重复加载宏包的问题。以xcolor包为例，原则上加载宏包只需要在导言区输入一次\usepackage{xcolor}即可，如果需要加载xcolor的可选项就输入\usepackage[option1,option2]{xcolor}。但是有的人使用过程中就喜欢">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-05T02:01:50.697Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xiang&#39;s Texmath">
+<meta name="twitter:title" content="宏包的重复加载与宏包选项的传递">
+<meta name="twitter:description" content="宏包重复加载的问题很多人（多指新手）喜欢复制粘贴别人的代码，也不管代码中的宏包是干什么的，也不懂加载的宏包是干什么的，所以经常复制粘贴就出现重复加载宏包的问题。以xcolor包为例，原则上加载宏包只需要在导言区输入一次\usepackage{xcolor}即可，如果需要加载xcolor的可选项就输入\usepackage[option1,option2]{xcolor}。但是有的人使用过程中就喜欢">
   
 
     <link rel="icon" href="/img/favicon.ico">
@@ -183,36 +187,72 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-package" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      宏包的重复加载与宏包选项的传递
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/05/package/" class="archive-article-date">
+
+        
+        <a href="/2019/08/05/package/" class="archive-article-date">
   	<time datetime="2019-08-05T01:18:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/05/package/">宏包的重复加载与宏包选项的传递</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="宏包重复加载的问题"><a href="#宏包重复加载的问题" class="headerlink" title="宏包重复加载的问题"></a>宏包重复加载的问题</h1><p>很多人（多指新手）喜欢复制粘贴别人的代码，也不管代码中的宏包是干什么的，也不懂加载的宏包是干什么的，所以经常复制粘贴就出现重复加载宏包的问题。以<code>xcolor</code>包为例，原则上加载宏包只需要在导言区输入一次<code>\usepackage{xcolor}</code>即可，如果需要加载<code>xcolor</code>的可选项就输入<code>\usepackage[option1,option2]{xcolor}</code>。但是有的人使用过程中就喜欢重复加载，多半是百度到啥就复制了啥。一般而言，重复加载是没有问题的，用<code>\usepackage</code>的方式加载的宏包有一个好处是重复加载的时候只有第一次加载有效，后面的重复加载会被忽略。但是这么说其实是有前提的，就是第二次加载的可选项不得超出第一加载的可选项。举例来说<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;ctexart&#125;</span><br><span class="line">\usepackage&#123;xcolor&#125;</span><br><span class="line">\usepackage&#123;xcolor&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\color&#123;red!40&#125;这是百分之40的红色。</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
+<p>和<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;ctexart&#125;</span><br><span class="line">\usepackage[dvipsnames,usenames]&#123;xcolor&#125;</span><br><span class="line">\usepackage[dvipsnames]&#123;xcolor&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\color&#123;Maroon&#125;这是褐红色。</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
+<p>都是没问题的，第二次加载的选项不超过第一次加载的选项，因此第二次加载都会被忽略，仅第一次加载有效。但是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;ctexart&#125;</span><br><span class="line">\usepackage[dvipsnames]&#123;xcolor&#125;</span><br><span class="line">\usepackage[dvipsnames,usenames]&#123;xcolor&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\color&#123;Maroon&#125;这是褐红色。</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
+<p>就会报错<code>option clash for package xcolor</code>，因为第二次加载比第一次多了选项<code>usenames</code>，从而报错了<code>xcolor</code>宏包选项冲突。总之，如果加载宏包最好不要重复加载，一次性把需要的选项都加载进来，避免后续冲突。</p>
+<h1 id="利用-documentclass传递宏包选项"><a href="#利用-documentclass传递宏包选项" class="headerlink" title="利用\documentclass传递宏包选项"></a>利用<code>\documentclass</code>传递宏包选项</h1><p>正常情况下，宏包选项支持由<code>\documentclass</code>的可选项进行传递，比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[dvipsnames,usenames,leqno,listings]&#123;ctexart&#125;</span><br><span class="line">\usepackage[x11names]&#123;xcolor&#125;</span><br><span class="line">\usepackage[sumlimits]&#123;amsmath&#125;</span><br><span class="line">\usepackage&#123;tcolorbox&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">&#123;\color&#123;Maroon&#125;这是褐红色。&#125;</span><br><span class="line">\begin&#123;equation&#125;</span><br><span class="line">\text&#123;公式编号在左&#125;</span><br><span class="line">\end&#123;equation&#125;</span><br><span class="line">\begin&#123;tcblisting&#125;&#123;&#125;</span><br><span class="line">tcolorbox的摘录环境</span><br><span class="line">\end&#123;tcblisting&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
+<p>就分别将选项<code>dvipsnames,usenames</code>传递给<code>xcolor</code>包，将选项<code>leqno</code>传递给<code>amsmath</code>包，将选项<code>listings</code>传递给<code>tcolorbox</code>包，并且及时我们在后续加载<code>xcolor</code>包的时候增加了可选项<code>x11names</code>，也不会产生冲突。但是注意<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[dvipsnames,usenames]&#123;ctexart&#125;</span><br><span class="line">\usepackage[x11names]&#123;xcolor&#125;</span><br><span class="line">\usepackage[divpnames,usenames]&#123;xcolor&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\color&#123;Maroon&#125;这是褐红色。</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
+<p>是会产生冲突的，总之避免重复加载同一个宏包，宠妃你知道如何解决冲突。</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://yuxtech.github.io/img/ali.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://yuxtech.github.io/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -224,366 +264,153 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yuxtech.github.io/2019/08/05/package/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/30/listings/" class="archive-article-date">
-  	<time datetime="2019-07-30T14:52:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/30/listings/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">解决listings环境无法嵌套的问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/30/listings/">解决listings环境无法嵌套的问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LaTeX</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#宏包重复加载的问题"><span class="toc-number">1.</span> <span class="toc-text">宏包重复加载的问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#利用-documentclass传递宏包选项"><span class="toc-number">2.</span> <span class="toc-text">利用\documentclass传递宏包选项</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/20/公式编号/" class="archive-article-date">
-  	<time datetime="2019-07-20T07:52:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/20/公式编号/">LaTeX公式编号技巧</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LaTeX</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/18/imo/" class="archive-article-date">
-  	<time datetime="2019-07-18T00:56:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/18/imo/">imo平面几何题</a>
-    </h1>
+  <!--
+<div id="SOHUCS" sid="package" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cysXCghbr",
+        conf: "c9c5c4144766cfcea9c2ab8b6a44650c"
+    });
+</script>
+</script>
+-->
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">TikZ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/14/平面几何绘图示例/" class="archive-article-date">
-  	<time datetime="2019-07-14T12:28:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/14/平面几何绘图示例/">tikz与tkz-euclide包平面几何绘图示例</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">TikZ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/10/geo/" class="archive-article-date">
-  	<time datetime="2019-07-10T04:28:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/10/geo/">tikz与tkz-euclide包绘制平面几何图形</a>
-    </h1>
+  <!--
+<div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "https://yuxtech.github.io/2019/08/05/package/",
+  owner: 'yuxtech',
+  repo: 'yuxtech.github.io',
+  oauth: {
+    client_id: 'cf0cc92bfce237008756',
+    client_secret: '270f5c92ad6a512eb61e7fb875a98f14b8583227',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+-->
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">TikZ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/19/huaji/" class="archive-article-date">
-  	<time datetime="2019-06-19T06:59:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/19/huaji/">用tikz绘制滑稽图像</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">TikZ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/16/cnlogo/" class="archive-article-date">
-  	<time datetime="2019-06-16T13:58:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/16/cnlogo/">中国大学校徽cnlogo包的使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LaTeX</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/14/ink/" class="archive-article-date">
-  	<time datetime="2019-06-14T12:53:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/14/ink/">inkscape2tikz</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">软件</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/13/exp/" class="archive-article-date">
-  	<time datetime="2019-06-13T06:08:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/13/exp/">几个条件数学期望问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
-  
-
+<!-- 目录内容 -->
+             
+        <!-- 目录内容结束 -->
 
           </div>
         </div>
@@ -605,8 +432,8 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
