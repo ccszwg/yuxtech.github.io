@@ -8,22 +8,20 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://yuxtech.github.io">
-  <title>解决listings环境无法嵌套的问题 | Xiang&#39;s Texmath</title>
+  <title>在LaTeX中自定义新目录 | Xiang&#39;s Texmath</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在LaTeX的摘录环境中，listings包提供的lstlisting环境无疑是最优秀的，它支持现在的多种计算机语言，提供了语法高亮功能，还有各种摘录设置。但是最近有群员询问有关lstlisting环境无法嵌套的问题：比如下面的问题，     如果使用两个lstlisting环境嵌套，会使得第一个\begin{lstlisting}匹配到第一个\end{lstlisting}而使得第二个报错。比较">
+  <meta name="description" content="用tocloft包定义新目录在LaTeX中，有三个命令\tableofcontents，\listoftable，\listoffigure，分别用来生成章节目录，表格目录和插图目录。但有时候我们需要生成其他目录，比如书籍中的例题目录，这个时候我们可以利用tocloft包自定义一个例题目录。tocloft包提供了\newlistof命令，其格式如下：1\newlistof[已有计数器count1]">
 <meta name="keywords" content="LaTeX">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决listings环境无法嵌套的问题">
-<meta property="og:url" content="https://yuxtech.github.io/2019/07/30/listings/index.html">
+<meta property="og:title" content="在LaTeX中自定义新目录">
+<meta property="og:url" content="https://yuxtech.github.io/2019/09/09/table/index.html">
 <meta property="og:site_name" content="Xiang&#39;s Texmath">
-<meta property="og:description" content="在LaTeX的摘录环境中，listings包提供的lstlisting环境无疑是最优秀的，它支持现在的多种计算机语言，提供了语法高亮功能，还有各种摘录设置。但是最近有群员询问有关lstlisting环境无法嵌套的问题：比如下面的问题，     如果使用两个lstlisting环境嵌套，会使得第一个\begin{lstlisting}匹配到第一个\end{lstlisting}而使得第二个报错。比较">
+<meta property="og:description" content="用tocloft包定义新目录在LaTeX中，有三个命令\tableofcontents，\listoftable，\listoffigure，分别用来生成章节目录，表格目录和插图目录。但有时候我们需要生成其他目录，比如书籍中的例题目录，这个时候我们可以利用tocloft包自定义一个例题目录。tocloft包提供了\newlistof命令，其格式如下：1\newlistof[已有计数器count1]">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://yuxtech.github.io/img/listings.png">
-<meta property="og:updated_time" content="2019-07-30T15:12:56.332Z">
+<meta property="og:updated_time" content="2019-09-09T08:18:29.260Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解决listings环境无法嵌套的问题">
-<meta name="twitter:description" content="在LaTeX的摘录环境中，listings包提供的lstlisting环境无疑是最优秀的，它支持现在的多种计算机语言，提供了语法高亮功能，还有各种摘录设置。但是最近有群员询问有关lstlisting环境无法嵌套的问题：比如下面的问题，     如果使用两个lstlisting环境嵌套，会使得第一个\begin{lstlisting}匹配到第一个\end{lstlisting}而使得第二个报错。比较">
-<meta name="twitter:image" content="https://yuxtech.github.io/img/listings.png">
+<meta name="twitter:title" content="在LaTeX中自定义新目录">
+<meta name="twitter:description" content="用tocloft包定义新目录在LaTeX中，有三个命令\tableofcontents，\listoftable，\listoffigure，分别用来生成章节目录，表格目录和插图目录。但有时候我们需要生成其他目录，比如书籍中的例题目录，这个时候我们可以利用tocloft包自定义一个例题目录。tocloft包提供了\newlistof命令，其格式如下：1\newlistof[已有计数器count1]">
   
 
     <link rel="icon" href="/img/favicon.ico">
@@ -189,26 +187,26 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-listings" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-table" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      解决listings环境无法嵌套的问题
+      在LaTeX中自定义新目录
     </h1>
   
 
         
-        <a href="/2019/07/30/listings/" class="archive-article-date">
+        <a href="/2019/09/09/table/" class="archive-article-date">
  
         <!-- 不蒜子统计 -->
         <span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-  	<time datetime="2019-07-30T14:52:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-30</time>
+  	<time datetime="2019-09-09T08:05:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-09</time>
 </a>
         
 		
@@ -220,10 +218,9 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在LaTeX的摘录环境中，<code>listings</code>包提供的<code>lstlisting</code>环境无疑是最优秀的，它支持现在的多种计算机语言，提供了语法高亮功能，还有各种摘录设置。但是最近有群员询问有关lstlisting环境无法嵌套的问题：比如下面的问题，</p>
-<p><div align="center">
-  <img width="600" src="https://yuxtech.github.io/img/listings.png">
-</div><br>如果使用两个lstlisting环境嵌套，会使得第一个<code>\begin{lstlisting}</code>匹配到第一个<code>\end{lstlisting}</code>而使得第二个报错。比较不错的解决方法就是把外层的摘录环境换成<code>verbatim</code>，不过由于个人比较喜欢<code>listings</code>包的风格，所以这里采用<code>tcolorbox</code>包的<code>listings</code>库提供的<code>tcblisting</code>环境。<code>tcblisting</code>环境其实就是调用的<code>listings</code>包，它一方面接受<code>listings</code>包的设置，另一方面还接受<code>tcolorbox</code>包的设置，简直一举两得。默认情况下，摘录的同时还执行摘录的代码，所以这里添加了<code>listing only</code>选项，仅仅作摘录使用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;ctexart&#125;</span><br><span class="line">\usepackage&#123;tcolorbox&#125;</span><br><span class="line">\tcbuselibrary&#123;listings&#125;</span><br><span class="line">\lstdefinestyle&#123;mystyle&#125;&#123;</span><br><span class="line">  basicstyle=%</span><br><span class="line">    \ttfamily</span><br><span class="line">    \lst@ifdisplaystyle\small\fi</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">\lstset&#123;basicstyle=\ttfamily,style=mystyle&#125;</span><br><span class="line"></span><br><span class="line">\definecolor&#123;structurecolor&#125;&#123;RGB&#125;&#123;0,120,2&#125;%</span><br><span class="line">\definecolor&#123;winered&#125;&#123;rgb&#125;&#123;0.5,0,0&#125;</span><br><span class="line">\definecolor&#123;lightgrey&#125;&#123;rgb&#125;&#123;0.9,0.9,0.9&#125;</span><br><span class="line">\definecolor&#123;frenchplum&#125;&#123;RGB&#125;&#123;190,20,83&#125;</span><br><span class="line">\lstset&#123;language=[LaTeX]TeX,</span><br><span class="line">	texcsstyle=*\color&#123;winered&#125;,</span><br><span class="line">	numbers=none,</span><br><span class="line">	breaklines=true,</span><br><span class="line">	keywordstyle=\color&#123;winered&#125;,</span><br><span class="line">	commentstyle=\color&#123;gray&#125;,</span><br><span class="line">	emph=&#123;main,none,fontenc,fontspec,xeCJK,FiraMono,xunicode,newtxmath,figure,fig,image,img,table,itemize,enumerate,newtxtext,newtxtt,ctex,microtype,description,times,newtx,booktabs,tabular,PDFLaTeX,XeLaTeX,type1cm,BibTeX,device,color,mode,lang,amsthm,tcolorbox,titlestyle,cite,marginnote,ctex,listings&#125;,</span><br><span class="line">	emphstyle=&#123;\color&#123;frenchplum&#125;&#125;,</span><br><span class="line">	morekeywords=&#123;main,DeclareSymbolFont,SetSymbolFont,toprule,midrule,bottomrule,institute,version,includegraphics,setmainfont,setsansfont,setmonofont ,setCJKmainfont,setCJKsansfont,setCJKmonofont,RequirePackage,figref,tabref,email,maketitle,keywords,definecolor,extrainfo,logo,cover,subtitle,appendix,chapter,hypersetup,mainmatter,tableofcontents,elegantpar,numbers,authoryear,heiti,kaishu,lstset,pagecolor,zhnumber,marginpar,part,equote&#125;,</span><br><span class="line">	frame=single,</span><br><span class="line">	tabsize=2,</span><br><span class="line">	rulecolor=\color&#123;structurecolor&#125;,</span><br><span class="line">	framerule=0pt,</span><br><span class="line">	columns=flexible,</span><br><span class="line">	% backgroundcolor=\color&#123;lightgrey&#125;</span><br><span class="line">&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\begin&#123;tcblisting&#125;&#123;listing only,boxrule=-1pt,colback=white&#125;</span><br><span class="line">\begin&#123;lstlisting&#125;[language=Fortran,frame=single]</span><br><span class="line">program main</span><br><span class="line">implicit none</span><br><span class="line">real(kind=8):: em,rmax,rkmax</span><br><span class="line">end</span><br><span class="line">\end&#123;lstlisting&#125;</span><br><span class="line">\end&#123;tcblisting&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
+        <h1 id="用tocloft包定义新目录"><a href="#用tocloft包定义新目录" class="headerlink" title="用tocloft包定义新目录"></a>用<code>tocloft</code>包定义新目录</h1><p>在LaTeX中，有三个命令<code>\tableofcontents</code>，<code>\listoftable</code>，<code>\listoffigure</code>，分别用来生成章节目录，表格目录和插图目录。但有时候我们需要生成其他目录，比如书籍中的例题目录，这个时候我们可以利用<code>tocloft</code>包<br>自定义一个例题目录。<code>tocloft</code>包提供了<code>\newlistof</code>命令，其格式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\newlistof[已有计数器count1]&#123;计数器count2&#125;&#123;扩展名&#125;&#123;目录名称&#125;</span><br></pre></td></tr></table></figure></p>
+<p>其中前两个参数等价于命令<code>\newcounter[count1]{count2}</code>，就是让第二个计数器绑定在第一个计数器，并随着第一个计数器，并随着第一个计数器的递增而归零。我们给出一个最小工作示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">\usepackage&#123;tocloft&#125;</span><br><span class="line">\newcommand\listexamplename&#123;例题目录&#125;</span><br><span class="line">\newlistof[section]&#123;exam&#125;&#123;ex&#125;&#123;\listexamplename&#125;</span><br><span class="line">\newenvironment&#123;example&#125;&#123;</span><br><span class="line"> 		\refstepcounter&#123;exam&#125;</span><br><span class="line"> &#125;&#123;\par&#125;</span><br><span class="line">\newcommand&#123;\exam&#125;[1]&#123;%</span><br><span class="line">\par\noindent\textbf&#123;例 \theexam. #1&#125;</span><br><span class="line">\addcontentsline&#123;ex&#125;&#123;exam&#125;&#123;\protect\numberline&#123;\theexam&#125;#1&#125;\par</span><br><span class="line">&#125;</span><br><span class="line">\usepackage[hidelinks]&#123;hyperref&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\listofexam</span><br><span class="line">\section&#123;第一节&#125;</span><br><span class="line">\begin&#123;example&#125;\exam&#123;勾股&#125;</span><br><span class="line">勾股定理</span><br><span class="line">\end&#123;example&#125;</span><br><span class="line">\section&#123;第二节&#125;</span><br><span class="line">\begin&#123;example&#125;\exam&#123;歌德&#125;</span><br><span class="line">哥德巴赫猜想</span><br><span class="line">\end&#123;example&#125;</span><br><span class="line">\section&#123;第三节&#125;</span><br><span class="line">\begin&#123;example&#125;\exam&#123;黎曼&#125;</span><br><span class="line">黎曼猜想</span><br><span class="line">\end&#123;example&#125;</span><br><span class="line"></span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
+<p>和一般的目录一样，需要编译两次，即可生成正确的例题目录。</p>
 
       
 
@@ -324,7 +321,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://yuxtech.github.io/2019/07/30/listings/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yuxtech.github.io/2019/09/09/table/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -338,18 +335,9 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
   
 <nav id="article-nav">
   
-    <a href="/2019/08/05/package/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          宏包的重复加载与宏包选项的传递
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/20/公式编号/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LaTeX公式编号技巧</div>
+    <a href="/2019/08/26/latex-animation/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">利用tikz和animate包绘制动画图像</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -376,7 +364,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#用tocloft包定义新目录"><span class="toc-number">1.</span> <span class="toc-text">用tocloft包定义新目录</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -393,7 +381,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 
   
   <!--
-<div id="SOHUCS" sid="listings" ></div> 
+<div id="SOHUCS" sid="table" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
@@ -414,7 +402,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "https://yuxtech.github.io/2019/07/30/listings/",
+  id: "https://yuxtech.github.io/2019/09/09/table/",
   owner: 'yuxtech',
   repo: 'yuxtech.github.io',
   oauth: {
