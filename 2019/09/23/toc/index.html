@@ -8,16 +8,23 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://yuxtech.github.io">
-  <title>Archives: 2019 | Xiang&#39;s Texmath</title>
+  <title>利用`titlesec`, `tocloft`, `tikz`包定制一个目录格式 | Xiang&#39;s Texmath</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="tex math">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Xiang&#39;s Texmath">
-<meta property="og:url" content="https://yuxtech.github.io/archives/2019/page/2/index.html">
+  <meta name="description" content="利用titlesec, tocloft, tikz包定制一个目录格式如何在LaTeX中实现以下目录格式我查阅了很多包的说明，勉强做出一点形式，但是并没有完全解决这个问题，现在给出一种定制的目录格式，涉及到etoolbox包的一些打补丁挂钩子的方法：1234567891011121314151617181920212223242526272829303132333435363738394041424">
+<meta name="keywords" content="LaTeX&#x2F;TikZ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用`titlesec`, `tocloft`, `tikz`包定制一个目录格式">
+<meta property="og:url" content="https://yuxtech.github.io/2019/09/23/toc/index.html">
 <meta property="og:site_name" content="Xiang&#39;s Texmath">
+<meta property="og:description" content="利用titlesec, tocloft, tikz包定制一个目录格式如何在LaTeX中实现以下目录格式我查阅了很多包的说明，勉强做出一点形式，但是并没有完全解决这个问题，现在给出一种定制的目录格式，涉及到etoolbox包的一些打补丁挂钩子的方法：1234567891011121314151617181920212223242526272829303132333435363738394041424">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://yuxtech.github.io/img/toc1.png">
+<meta property="og:image" content="https://yuxtech.github.io/img/toc2.png">
+<meta property="og:updated_time" content="2019-09-23T08:12:18.305Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xiang&#39;s Texmath">
+<meta name="twitter:title" content="利用`titlesec`, `tocloft`, `tikz`包定制一个目录格式">
+<meta name="twitter:description" content="利用titlesec, tocloft, tikz包定制一个目录格式如何在LaTeX中实现以下目录格式我查阅了很多包的说明，勉强做出一点形式，但是并没有完全解决这个问题，现在给出一种定制的目录格式，涉及到etoolbox包的一些打补丁挂钩子的方法：1234567891011121314151617181920212223242526272829303132333435363738394041424">
+<meta name="twitter:image" content="https://yuxtech.github.io/img/toc1.png">
   
 
     <link rel="icon" href="/img/favicon.ico">
@@ -183,417 +190,236 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-toc" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      利用`titlesec`, `tocloft`, `tikz`包定制一个目录格式
+    </h1>
+  
+
+        
+        <a href="/2019/09/23/toc/" class="archive-article-date">
+ 
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+  	<time datetime="2019-09-23T07:52:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-23</time>
+</a>
+        
+		
+    <span class="archive-article-date">
+        阅读量 <span id="busuanzi_value_page_pv"></span>
+    </span>
+
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="利用titlesec-tocloft-tikz包定制一个目录格式"><a href="#利用titlesec-tocloft-tikz包定制一个目录格式" class="headerlink" title="利用titlesec, tocloft, tikz包定制一个目录格式"></a>利用<code>titlesec</code>, <code>tocloft</code>, <code>tikz</code>包定制一个目录格式</h1><p>如何在<code>LaTeX</code>中实现以下目录格式<br><img src="https://yuxtech.github.io/img/toc1.png" alt="mulu"><br>我查阅了很多包的说明，勉强做出一点形式，但是并没有完全解决这个问题，现在给出一种定制的目录格式，涉及到<code>etoolbox</code>包的一些打补丁挂钩子的方法：<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">documentclass</span><span class="string">[openany]</span><span class="string">&#123;ctexbook&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;multicol,etoolbox&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;titletoc,titlesec,xcolor&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">[hidelinks]</span><span class="string">&#123;hyperref&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">[centering,</span></span></span><br><span class="line"><span class="tag"><span class="string">           top=2.54cm,bottom=2.54cm,right=2.9cm,left=2.9cm,</span></span></span><br><span class="line"><span class="tag"><span class="string">           headsep=25pt,headheight=20pt]</span><span class="string">&#123;geometry&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;xcolor&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;pgfornament&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">definecolor</span><span class="string">&#123;myred&#125;</span><span class="string">&#123;RGB&#125;</span><span class="string">&#123;127,0,0&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">definecolor</span><span class="string">&#123;myyellow&#125;</span><span class="string">&#123;RGB&#125;</span><span class="string">&#123;169,121,69&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">definecolor</span><span class="string">&#123;gray75&#125;</span><span class="string">&#123;gray&#125;</span><span class="string">&#123;0.75&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">titleformat</span><span class="string">&#123;\chapter&#125;</span></span><span class="comment">% Command</span></span><br><span class="line">  [hang]<span class="comment">% Shape</span></span><br><span class="line">  &#123;<span class="tag">\<span class="name">Huge</span></span><span class="tag">\<span class="name">bfseries</span></span><span class="tag">\<span class="name">color</span><span class="string">&#123;myred&#125;</span></span>&#125;<span class="comment">% Format</span></span><br><span class="line">  &#123;<span class="tag">\<span class="name">protect</span><span class="string">&#123;\color&#123;myyellow&#125;</span></span><span class="tag">\<span class="name">thechapter</span></span><span class="tag">\<span class="name">hfil</span></span>&#125;&#125;<span class="comment">% Label</span></span><br><span class="line">  &#123;1em&#125;<span class="comment">% Sep</span></span><br><span class="line">  &#123;&#125;<span class="comment">% Before-Code</span></span><br><span class="line">  [<span class="tag">\<span class="name">ifnum</span></span><span class="tag">\<span class="name">value</span><span class="string">&#123;chapter&#125;</span></span>&gt;0 <span class="tag">\<span class="name">addtocontents</span><span class="string">&#123;toc&#125;</span><span class="string">&#123;\protect\begin&#123;multicols&#125;</span><span class="string">&#123;2&#125;</span></span>&#125;<span class="tag">\<span class="name">fi</span></span>]<span class="comment">% After-Code</span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">pretocmd</span><span class="string">&#123;\chapter&#125;</span><span class="string">&#123;\ifnum\value&#123;chapter&#125;</span></span>&gt;0 <span class="tag">\<span class="name">addtocontents</span><span class="string">&#123;toc&#125;</span><span class="string">&#123;\protect\end&#123;multicols&#125;</span></span>&#125;<span class="tag">\<span class="name">fi</span></span>&#125;&#123;&#125;&#123;&#125;</span><br><span class="line"><span class="tag">\<span class="name">AtEndDocument</span><span class="string">&#123;\ifnum\value&#123;chapter&#125;</span></span>&gt;0 <span class="tag">\<span class="name">addtocontents</span><span class="string">&#123;toc&#125;</span><span class="string">&#123;\protect\end&#123;multicols&#125;</span></span>&#125;<span class="tag">\<span class="name">fi</span></span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span></span><span class="tag">\<span class="name">contentsname</span><span class="string">&#123;\centerline&#123;目录&#125;</span></span>&#125;</span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;tocloft&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span></span><span class="tag">\<span class="name">cftsecnumwidth</span><span class="string">&#123;1em&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;tikz&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">definecolor</span><span class="string">&#123;doc&#125;</span><span class="string">&#123;RGB&#125;</span><span class="string">&#123;0,60,110&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">definecolor</span><span class="string">&#123;myblue&#125;</span><span class="string">&#123;RGB&#125;</span><span class="string">&#123;63,200,244&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">titlecontents</span><span class="string">&#123;chapter&#125;</span><span class="string">[8em]</span></span></span><br><span class="line">&#123;<span class="tag">\<span class="name">filcenter</span></span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;tikzpicture&#125;</span><span class="string">[remember picture, overlay]</span></span><span class="comment">%</span></span><br><span class="line"><span class="tag">\<span class="name">draw</span><span class="string">[fill=myblue,draw=myblue, sharp corners]</span></span> (-<span class="tag">\<span class="name">textwidth</span></span>,-.2) rectangle (<span class="tag">\<span class="name">textwidth</span></span>,.5);<span class="comment">%</span></span><br><span class="line"><span class="tag">\<span class="name">pgftext</span><span class="string">[left,x=-2.7cm,y=0.2cm]</span><span class="string">&#123;\color&#123;black&#125;</span></span><span class="tag">\<span class="name">Large</span></span> <span class="tag">\<span class="name">heiti</span></span><span class="tag">\<span class="name">thecontentslabel</span></span>&#125;;<span class="comment">%</span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;tikzpicture&#125;</span></span><span class="tag">\<span class="name">color</span><span class="string">&#123;black&#125;</span></span><span class="tag">\<span class="name">large</span></span><span class="tag">\<span class="name">heiti</span></span><span class="tag">\<span class="name">bfseries</span></span>&#125;<span class="comment">%</span></span><br><span class="line">&#123;&#125;</span><br><span class="line">&#123;&#125;</span><br><span class="line">&#123;&#125;<span class="comment">%</span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;document&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;tikzpicture&#125;</span><span class="string">[remember picture,overlay]</span></span></span><br><span class="line"><span class="tag">\<span class="name">node</span></span> at([shift=(-114:6)]current page.north)&#123;<span class="tag">\<span class="name">pgfornament</span><span class="string">[scale=0.3,color=blue!20]</span><span class="string">&#123;78&#125;</span></span>&#125;;</span><br><span class="line"><span class="tag">\<span class="name">node</span></span> at([shift=(-66:6)]current page.north)&#123;<span class="tag">\<span class="name">pgfornament</span><span class="string">[scale=0.3,symmetry=v,color=blue!20]</span><span class="string">&#123;78&#125;</span></span>&#125;;</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;tikzpicture&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">tableofcontents</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">chapter</span><span class="string">&#123;章节&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;bar1&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;bar2&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;bar3&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;bar4&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">chapter</span><span class="string">&#123;BAR&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;foo1&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;foo2&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;foo3&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;foo4&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;document&#125;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>未解决的问题是无法做到将目录中的章名称居中用带颜色的盒子包住，退而求其次，画了一整条带子。<br><img src="https://yuxtech.github.io/img/toc2.png" alt="mulu"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://yuxtech.github.io/img/ali.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://yuxtech.github.io/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/19/huaji/" class="archive-article-date">
- 
-  	<time datetime="2019-06-19T06:59:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/19/huaji/">用tikz绘制滑稽图像</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">TikZ</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LaTeX/TikZ</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yuxtech.github.io/2019/09/23/toc/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/16/cnlogo/" class="archive-article-date">
- 
-  	<time datetime="2019-06-16T13:58:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-16</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/09/table/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">在LaTeX中自定义新目录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/16/cnlogo/">中国大学校徽cnlogo包的使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LaTeX</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#利用titlesec-tocloft-tikz包定制一个目录格式"><span class="toc-number">1.</span> <span class="toc-text">利用titlesec, tocloft, tikz包定制一个目录格式</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/14/ink/" class="archive-article-date">
- 
-  	<time datetime="2019-06-14T12:53:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-14</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/14/ink/">inkscape2tikz</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">软件</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/13/exp/" class="archive-article-date">
- 
-  	<time datetime="2019-06-13T06:08:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/13/exp/">几个条件数学期望问题</a>
-    </h1>
+  <!--
+<div id="SOHUCS" sid="toc" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cysXCghbr",
+        conf: "c9c5c4144766cfcea9c2ab8b6a44650c"
+    });
+</script>
+</script>
+-->
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/28/kaoyan/" class="archive-article-date">
- 
-  	<time datetime="2019-05-28T06:26:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/28/kaoyan/">kaoyan</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">考研</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/27/mtpro2/" class="archive-article-date">
- 
-  	<time datetime="2019-05-26T16:49:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/27/mtpro2/">mtpro2</a>
-    </h1>
+  <!--
+<div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "https://yuxtech.github.io/2019/09/23/toc/",
+  owner: 'yuxtech',
+  repo: 'yuxtech.github.io',
+  oauth: {
+    client_id: 'cf0cc92bfce237008756',
+    client_secret: '270f5c92ad6a512eb61e7fb875a98f14b8583227',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+-->
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LaTeX</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/27/hello-world/" class="archive-article-date">
- 
-  	<time datetime="2019-05-26T16:27:57.951Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/27/hello-world/">tikz绘制的分形六边形</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">TikZ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/19/gzh/" class="archive-article-date">
- 
-  	<time datetime="2019-05-19T15:22:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/19/gzh/">我的公众号文章</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/13/card/" class="archive-article-date">
- 
-  	<time datetime="2019-05-13T01:10:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/13/card/">Mother&#39;s Day</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">TikZ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/09/imc/" class="archive-article-date">
- 
-  	<time datetime="2019-05-09T02:52:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/09/imc/">imc</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2019/">&laquo; Prev</a><a class="page-number" href="/archives/2019/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2019/page/3/">3</a><a class="extend next" rel="next" href="/archives/2019/page/3/">Next &raquo;</a>
-    </nav>
-  
-
+<!-- 目录内容 -->
+             
+        <!-- 目录内容结束 -->
 
           </div>
         </div>
@@ -627,8 +453,8 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
