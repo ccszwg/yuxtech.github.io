@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuxtech.github.io/"/>
-  <updated>2019-10-18T07:20:34.531Z</updated>
+  <updated>2019-11-22T02:34:26.273Z</updated>
   <id>https://yuxtech.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2020年考研数学模拟卷</title>
+    <link href="https://yuxtech.github.io/2019/11/22/monijuan/"/>
+    <id>https://yuxtech.github.io/2019/11/22/monijuan/</id>
+    <published>2019-11-22T02:30:35.000Z</published>
+    <updated>2019-11-22T02:34:26.273Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="数学一模拟卷及答案"><a href="#数学一模拟卷及答案" class="headerlink" title="数学一模拟卷及答案"></a>数学一模拟卷及答案</h1><p><a href="https://yuxtech.github.io/math/数学一模拟卷.pdf">数学一模拟卷</a><br><a href="https://yuxtech.github.io/math/数学一模拟卷答案.pdf">数学一模拟卷答案</a></p><h1 id="数学二模拟卷及答案"><a href="#数学二模拟卷及答案" class="headerlink" title="数学二模拟卷及答案"></a>数学二模拟卷及答案</h1><p><a href="https://yuxtech.github.io/math/数学二模拟卷.pdf">数学二模拟卷</a><br><a href="https://yuxtech.github.io/math/数学二模拟卷答案.pdf">数学二模拟卷答案</a></p><h1 id="数学三模拟卷及答案"><a href="#数学三模拟卷及答案" class="headerlink" title="数学三模拟卷及答案"></a>数学三模拟卷及答案</h1><p><a href="https://yuxtech.github.io/math/数学三模拟卷.pdf">数学三模拟卷</a><br><a href="https://yuxtech.github.io/math/数学三模拟卷答案.pdf">数学三模拟卷答案</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;数学一模拟卷及答案&quot;&gt;&lt;a href=&quot;#数学一模拟卷及答案&quot; class=&quot;headerlink&quot; title=&quot;数学一模拟卷及答案&quot;&gt;&lt;/a&gt;数学一模拟卷及答案&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://yuxtech.github.io/math/数学
+      
+    
+    </summary>
+    
+    
+      <category term="考研" scheme="https://yuxtech.github.io/tags/%E8%80%83%E7%A0%94/"/>
+    
+  </entry>
   
   <entry>
     <title>School Science and Mathematics Association 数学杂志</title>
@@ -453,31 +476,6 @@
     
     
       <category term="LaTeX" scheme="https://yuxtech.github.io/tags/LaTeX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>tikz绘制的分形六边形</title>
-    <link href="https://yuxtech.github.io/2019/05/27/hello-world/"/>
-    <id>https://yuxtech.github.io/2019/05/27/hello-world/</id>
-    <published>2019-05-26T16:27:57.951Z</published>
-    <updated>2019-05-10T15:17:54.334Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="tikz"><a href="#tikz" class="headerlink" title="tikz"></a>tikz</h2><p>这是一个tikz绘制的图形，取自tikzexample</p><p><div align="center">  <img width="200" src="https://yuxtech.github.io/img/colorwheel.png"></div><br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">documentclass</span><span class="string">[border=10pt,tikz]</span><span class="string">&#123;standalone&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usetikzlibrary</span><span class="string">&#123;shadings&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;document&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;tikzpicture&#125;</span></span></span><br><span class="line">    <span class="tag">\<span class="name">path</span><span class="string">[coordinate]</span></span> (0,0)  coordinate(A)</span><br><span class="line">                ++( 120:6cm) coordinate(B)</span><br><span class="line">                ++(60:6cm) coordinate(C)</span><br><span class="line">                ++(0:6cm) coordinate(D)</span><br><span class="line">                ++(-60:6cm) coordinate(E)</span><br><span class="line">                ++(240:6cm) coordinate(F)</span><br><span class="line">                ;</span><br><span class="line">    <span class="tag">\<span class="name">filldraw</span><span class="string">[shading=color wheel]</span></span> (A) -- (B) -- (C) --(D) -- (E) -- (F)-- cycle;</span><br><span class="line">    <span class="tag">\<span class="name">foreach</span></span> <span class="tag">\<span class="name">x</span></span> in &#123;1,...,60&#125;&#123;<span class="comment">%</span></span><br><span class="line">        <span class="tag">\<span class="name">path</span><span class="string">[coordinate]</span></span> coordinate(X) at (A)&#123;&#125;;</span><br><span class="line">        <span class="tag">\<span class="name">path</span><span class="string">[coordinate]</span></span> (A) -- (B) coordinate[pos=.10](A)</span><br><span class="line">                            -- (C) coordinate[pos=.10](B)</span><br><span class="line">                            -- (D) coordinate[pos=.10](C)</span><br><span class="line">                            -- (E) coordinate[pos=.10](D)</span><br><span class="line">                             -- (F) coordinate[pos=.10](E)</span><br><span class="line">                            -- (X) coordinate[pos=.10](F);</span><br><span class="line">        <span class="tag">\<span class="name">draw</span></span>(A)--(B)--(C)-- (D) --(E) -- (F) -- cycle;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;tikzpicture&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;document&#125;</span></span></span><br></pre></td></tr></table></figure></p><p><a href="https://yuxtech.github.io/tex/colorwheel.pdf">colorwheel</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;tikz&quot;&gt;&lt;a href=&quot;#tikz&quot; class=&quot;headerlink&quot; title=&quot;tikz&quot;&gt;&lt;/a&gt;tikz&lt;/h2&gt;&lt;p&gt;这是一个tikz绘制的图形，取自tikzexample&lt;/p&gt;
-&lt;p&gt;&lt;div align=&quot;center&quot;&gt;
-  &lt;img
-      
-    
-    </summary>
-    
-    
-      <category term="TikZ" scheme="https://yuxtech.github.io/tags/TikZ/"/>
     
   </entry>
   
