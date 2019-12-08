@@ -185,6 +185,91 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-package" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/05/package/">宏包的重复加载与宏包选项的传递</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/05/package/" class="archive-article-date">
+ 
+  	<time datetime="2019-08-05T01:18:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
+</a>
+        
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="宏包重复加载的问题"><a href="#宏包重复加载的问题" class="headerlink" title="宏包重复加载的问题"></a>宏包重复加载的问题</h1><p>很多人（多指新手）喜欢复制粘贴别人的代码，也不管代码中的设置是干什么的，也不懂加载的宏包是干什么的，所以经常复制粘贴就出现重复加载宏包的问题。以<code>xcolor</code>包为例，原则上加载宏包只需要在导言区输入一次<code>\usepackage{xcolor}</code>即可，如果需要加载<code>xcolor</code>的可选项就输入<code>\usepackage[option1,option2]{xcolor}</code>。但是有的人使用过程中就喜欢重复加载，多半是百度到啥就复制了啥。一般而言，重复加载是没有问题的，用<code>\usepackage</code>的方式加载的宏包有一个好处是重复加载的时候只有第一次加载有效，后面的重复加载会被忽略。但是这么说其实是有前提的，就是第二次加载的可选项不得超出第一加载的可选项。举例来说<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;ctexart&#125;</span><br><span class="line">\usepackage&#123;xcolor&#125;</span><br><span class="line">\usepackage&#123;xcolor&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\color&#123;red!40&#125;这是百分之40的红色。</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
+<p>和<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;ctexart&#125;</span><br><span class="line">\usepackage[dvipsnames,usenames]&#123;xcolor&#125;</span><br><span class="line">\usepackage[dvipsnames]&#123;xcolor&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\color&#123;Maroon&#125;这是褐红色。</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
+<p>都是没问题的，第二次加载的选项不超过第一次加载的选项，因此第二次加载都会被忽略，仅第一次加载有效。但是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;ctexart&#125;</span><br><span class="line">\usepackage[dvipsnames]&#123;xcolor&#125;</span><br><span class="line">\usepackage[dvipsnames,usenames]&#123;xcolor&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\color&#123;Maroon&#125;这是褐红色。</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
+<p>就会报错<code>option clash for package xcolor</code>，因为第二次加载比第一次多了选项<code>usenames</code>，从而报错了<code>xcolor</code>宏包选项冲突。总之，如果加载宏包最好不要重复加载，一次性把需要的选项都加载进来，避免后续冲突。</p>
+<h1 id="利用-documentclass传递宏包选项"><a href="#利用-documentclass传递宏包选项" class="headerlink" title="利用\documentclass传递宏包选项"></a>利用<code>\documentclass</code>传递宏包选项</h1><p>正常情况下，宏包选项支持由<code>\documentclass</code>的可选项进行传递，比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[dvipsnames,usenames,leqno,listings]&#123;ctexart&#125;</span><br><span class="line">\usepackage[x11names]&#123;xcolor&#125;</span><br><span class="line">\usepackage[sumlimits]&#123;amsmath&#125;</span><br><span class="line">\usepackage&#123;tcolorbox&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">&#123;\color&#123;Maroon&#125;这是褐红色。&#125;</span><br><span class="line">\begin&#123;equation&#125;</span><br><span class="line">\text&#123;公式编号在左&#125;</span><br><span class="line">\end&#123;equation&#125;</span><br><span class="line">\begin&#123;tcblisting&#125;&#123;&#125;</span><br><span class="line">tcolorbox的摘录环境</span><br><span class="line">\end&#123;tcblisting&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
+<p>就分别将选项<code>dvipsnames,usenames</code>传递给<code>xcolor</code>包，将选项<code>leqno</code>传递给<code>amsmath</code>包，将选项<code>listings</code>传递给<code>tcolorbox</code>包，并且即使我们在后续加载<code>xcolor</code>包的时候增加了可选项<code>x11names</code>，也不会产生冲突。但是注意<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[dvipsnames,usenames]&#123;ctexart&#125;</span><br><span class="line">\usepackage[x11names]&#123;xcolor&#125;</span><br><span class="line">\usepackage[divpnames,usenames]&#123;xcolor&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\color&#123;Maroon&#125;这是褐红色。</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
+<p>是会产生冲突的，总之避免重复加载同一个宏包，除非你知道如何解决冲突。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LaTeX</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/05/package/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+<!-- 目录内容 -->
+             
+        <!-- 目录内容结束 -->
+
+  
     <article id="post-listings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -934,101 +1019,6 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
         <!-- 目录内容结束 -->
 
   
-    <article id="post-kaoyan" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/28/kaoyan/">kaoyan</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/28/kaoyan/" class="archive-article-date">
- 
-  	<time datetime="2019-05-28T06:26:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-28</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="2018和2019年考研数学一二三真题解答"><a href="#2018和2019年考研数学一二三真题解答" class="headerlink" title="2018和2019年考研数学一二三真题解答"></a>2018和2019年考研数学一二三真题解答</h1><p><a href="https://yuxtech.github.io/math/2018.pdf">2018年考研真题解答</a></p>
-
-
-	<div class="row">
-    <embed src="https://yuxtech.github.io/math/2018.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-
-<p><a href="https://yuxtech.github.io/math/2019.pdf">2019年考研真题解答</a></p>
-
-
-	<div class="row">
-    <embed src="https://yuxtech.github.io/math/2019.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">考研</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/28/kaoyan/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-<!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1167,19 +1157,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">考研</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">LaTeX</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">软件</a>
+                <a href="javascript:void(0)" class="js-tag color3">考研</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">软件</a>
               </li>
              
               <li class="article-tag-list-item">
