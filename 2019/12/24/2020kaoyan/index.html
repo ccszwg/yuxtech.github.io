@@ -8,23 +8,20 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://yuxtech.github.io">
-  <title>定制一个目录格式 | Xiang&#39;s Texmath</title>
+  <title>2020考研数学真题与答案 | Xiang&#39;s Texmath</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="利用titlesec, tocloft, tikz包定制一个目录格式如何在LaTeX中实现以下目录格式我查阅了很多包的说明，勉强做出一点形式，但是并没有完全解决这个问题，现在给出一种定制的目录格式，涉及到etoolbox包的一些打补丁挂钩子的方法：1234567891011121314151617181920212223242526272829303132333435363738394041424">
-<meta name="keywords" content="LaTeX&#x2F;TikZ">
+  <meta name="description" content="数学一真题及答案数学一真题数学一答案 数学二真题及答案数学二真题数学二答案 数学三真题及答案数学三真题数学三答案">
+<meta name="keywords" content="考研">
 <meta property="og:type" content="article">
-<meta property="og:title" content="定制一个目录格式">
-<meta property="og:url" content="https://yuxtech.github.io/2019/09/23/toc/index.html">
+<meta property="og:title" content="2020考研数学真题与答案">
+<meta property="og:url" content="https://yuxtech.github.io/2019/12/24/2020kaoyan/index.html">
 <meta property="og:site_name" content="Xiang&#39;s Texmath">
-<meta property="og:description" content="利用titlesec, tocloft, tikz包定制一个目录格式如何在LaTeX中实现以下目录格式我查阅了很多包的说明，勉强做出一点形式，但是并没有完全解决这个问题，现在给出一种定制的目录格式，涉及到etoolbox包的一些打补丁挂钩子的方法：1234567891011121314151617181920212223242526272829303132333435363738394041424">
+<meta property="og:description" content="数学一真题及答案数学一真题数学一答案 数学二真题及答案数学二真题数学二答案 数学三真题及答案数学三真题数学三答案">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://yuxtech.github.io/img/toc1.jpg">
-<meta property="og:image" content="https://yuxtech.github.io/img/toc2.png">
-<meta property="og:updated_time" content="2019-09-23T08:18:21.610Z">
+<meta property="og:updated_time" content="2019-12-24T14:23:08.822Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="定制一个目录格式">
-<meta name="twitter:description" content="利用titlesec, tocloft, tikz包定制一个目录格式如何在LaTeX中实现以下目录格式我查阅了很多包的说明，勉强做出一点形式，但是并没有完全解决这个问题，现在给出一种定制的目录格式，涉及到etoolbox包的一些打补丁挂钩子的方法：1234567891011121314151617181920212223242526272829303132333435363738394041424">
-<meta name="twitter:image" content="https://yuxtech.github.io/img/toc1.jpg">
+<meta name="twitter:title" content="2020考研数学真题与答案">
+<meta name="twitter:description" content="数学一真题及答案数学一真题数学一答案 数学二真题及答案数学二真题数学二答案 数学三真题及答案数学三真题数学三答案">
   
 
     <link rel="icon" href="/img/favicon.ico">
@@ -190,26 +187,26 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-toc" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2020kaoyan" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      定制一个目录格式
+      2020考研数学真题与答案
     </h1>
   
 
         
-        <a href="/2019/09/23/toc/" class="archive-article-date">
+        <a href="/2019/12/24/2020kaoyan/" class="archive-article-date">
  
         <!-- 不蒜子统计 -->
         <span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-  	<time datetime="2019-09-23T07:52:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-23</time>
+  	<time datetime="2019-12-24T14:20:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-24</time>
 </a>
         
 		
@@ -221,8 +218,9 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="利用titlesec-tocloft-tikz包定制一个目录格式"><a href="#利用titlesec-tocloft-tikz包定制一个目录格式" class="headerlink" title="利用titlesec, tocloft, tikz包定制一个目录格式"></a>利用<code>titlesec</code>, <code>tocloft</code>, <code>tikz</code>包定制一个目录格式</h1><p>如何在<code>LaTeX</code>中实现以下目录格式<br><img src="https://yuxtech.github.io/img/toc1.jpg" alt="mulu"><br>我查阅了很多包的说明，勉强做出一点形式，但是并没有完全解决这个问题，现在给出一种定制的目录格式，涉及到<code>etoolbox</code>包的一些打补丁挂钩子的方法：<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">documentclass</span><span class="string">[openany]</span><span class="string">&#123;ctexbook&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;multicol,etoolbox&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;titletoc,titlesec,xcolor&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">[hidelinks]</span><span class="string">&#123;hyperref&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">[centering,</span></span></span><br><span class="line"><span class="tag"><span class="string">           top=2.54cm,bottom=2.54cm,right=2.9cm,left=2.9cm,</span></span></span><br><span class="line"><span class="tag"><span class="string">           headsep=25pt,headheight=20pt]</span><span class="string">&#123;geometry&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;xcolor&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;pgfornament&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">definecolor</span><span class="string">&#123;myred&#125;</span><span class="string">&#123;RGB&#125;</span><span class="string">&#123;127,0,0&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">definecolor</span><span class="string">&#123;myyellow&#125;</span><span class="string">&#123;RGB&#125;</span><span class="string">&#123;169,121,69&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">definecolor</span><span class="string">&#123;gray75&#125;</span><span class="string">&#123;gray&#125;</span><span class="string">&#123;0.75&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">titleformat</span><span class="string">&#123;\chapter&#125;</span></span><span class="comment">% Command</span></span><br><span class="line">  [hang]<span class="comment">% Shape</span></span><br><span class="line">  &#123;<span class="tag">\<span class="name">Huge</span></span><span class="tag">\<span class="name">bfseries</span></span><span class="tag">\<span class="name">color</span><span class="string">&#123;myred&#125;</span></span>&#125;<span class="comment">% Format</span></span><br><span class="line">  &#123;<span class="tag">\<span class="name">protect</span><span class="string">&#123;\color&#123;myyellow&#125;</span></span><span class="tag">\<span class="name">thechapter</span></span><span class="tag">\<span class="name">hfil</span></span>&#125;&#125;<span class="comment">% Label</span></span><br><span class="line">  &#123;1em&#125;<span class="comment">% Sep</span></span><br><span class="line">  &#123;&#125;<span class="comment">% Before-Code</span></span><br><span class="line">  [<span class="tag">\<span class="name">ifnum</span></span><span class="tag">\<span class="name">value</span><span class="string">&#123;chapter&#125;</span></span>&gt;0 <span class="tag">\<span class="name">addtocontents</span><span class="string">&#123;toc&#125;</span><span class="string">&#123;\protect\begin&#123;multicols&#125;</span><span class="string">&#123;2&#125;</span></span>&#125;<span class="tag">\<span class="name">fi</span></span>]<span class="comment">% After-Code</span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">pretocmd</span><span class="string">&#123;\chapter&#125;</span><span class="string">&#123;\ifnum\value&#123;chapter&#125;</span></span>&gt;0 <span class="tag">\<span class="name">addtocontents</span><span class="string">&#123;toc&#125;</span><span class="string">&#123;\protect\end&#123;multicols&#125;</span></span>&#125;<span class="tag">\<span class="name">fi</span></span>&#125;&#123;&#125;&#123;&#125;</span><br><span class="line"><span class="tag">\<span class="name">AtEndDocument</span><span class="string">&#123;\ifnum\value&#123;chapter&#125;</span></span>&gt;0 <span class="tag">\<span class="name">addtocontents</span><span class="string">&#123;toc&#125;</span><span class="string">&#123;\protect\end&#123;multicols&#125;</span></span>&#125;<span class="tag">\<span class="name">fi</span></span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span></span><span class="tag">\<span class="name">contentsname</span><span class="string">&#123;\centerline&#123;目录&#125;</span></span>&#125;</span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;tocloft&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span></span><span class="tag">\<span class="name">cftsecnumwidth</span><span class="string">&#123;1em&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;tikz&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">definecolor</span><span class="string">&#123;doc&#125;</span><span class="string">&#123;RGB&#125;</span><span class="string">&#123;0,60,110&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">definecolor</span><span class="string">&#123;myblue&#125;</span><span class="string">&#123;RGB&#125;</span><span class="string">&#123;63,200,244&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">titlecontents</span><span class="string">&#123;chapter&#125;</span><span class="string">[8em]</span></span></span><br><span class="line">&#123;<span class="tag">\<span class="name">filcenter</span></span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;tikzpicture&#125;</span><span class="string">[remember picture, overlay]</span></span><span class="comment">%</span></span><br><span class="line"><span class="tag">\<span class="name">draw</span><span class="string">[fill=myblue,draw=myblue, sharp corners]</span></span> (-<span class="tag">\<span class="name">textwidth</span></span>,-.2) rectangle (<span class="tag">\<span class="name">textwidth</span></span>,.5);<span class="comment">%</span></span><br><span class="line"><span class="tag">\<span class="name">pgftext</span><span class="string">[left,x=-2.7cm,y=0.2cm]</span><span class="string">&#123;\color&#123;black&#125;</span></span><span class="tag">\<span class="name">Large</span></span> <span class="tag">\<span class="name">heiti</span></span><span class="tag">\<span class="name">thecontentslabel</span></span>&#125;;<span class="comment">%</span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;tikzpicture&#125;</span></span><span class="tag">\<span class="name">color</span><span class="string">&#123;black&#125;</span></span><span class="tag">\<span class="name">large</span></span><span class="tag">\<span class="name">heiti</span></span><span class="tag">\<span class="name">bfseries</span></span>&#125;<span class="comment">%</span></span><br><span class="line">&#123;&#125;</span><br><span class="line">&#123;&#125;</span><br><span class="line">&#123;&#125;<span class="comment">%</span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;document&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;tikzpicture&#125;</span><span class="string">[remember picture,overlay]</span></span></span><br><span class="line"><span class="tag">\<span class="name">node</span></span> at([shift=(-114:6)]current page.north)&#123;<span class="tag">\<span class="name">pgfornament</span><span class="string">[scale=0.3,color=blue!20]</span><span class="string">&#123;78&#125;</span></span>&#125;;</span><br><span class="line"><span class="tag">\<span class="name">node</span></span> at([shift=(-66:6)]current page.north)&#123;<span class="tag">\<span class="name">pgfornament</span><span class="string">[scale=0.3,symmetry=v,color=blue!20]</span><span class="string">&#123;78&#125;</span></span>&#125;;</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;tikzpicture&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">tableofcontents</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">chapter</span><span class="string">&#123;章节&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;bar1&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;bar2&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;bar3&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;bar4&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">chapter</span><span class="string">&#123;BAR&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;foo1&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;foo2&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;foo3&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;foo4&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;document&#125;</span></span></span><br></pre></td></tr></table></figure></p>
-<p>未解决的问题是无法做到将目录中的章名称居中用带颜色的盒子包住，退而求其次，画了一整条带子。<br><img src="https://yuxtech.github.io/img/toc2.png" alt="mulu"></p>
+        <h1 id="数学一真题及答案"><a href="#数学一真题及答案" class="headerlink" title="数学一真题及答案"></a>数学一真题及答案</h1><p><a href="https://yuxtech.github.io/math/20考研数学一真题.pdf">数学一真题</a><br><a href="https://yuxtech.github.io/math/20考研数学一答案.pdf">数学一答案</a></p>
+<h1 id="数学二真题及答案"><a href="#数学二真题及答案" class="headerlink" title="数学二真题及答案"></a>数学二真题及答案</h1><p><a href="https://yuxtech.github.io/math/20考研数学二真题.pdf">数学二真题</a><br><a href="https://yuxtech.github.io/math/20考研数学二答案.pdf">数学二答案</a></p>
+<h1 id="数学三真题及答案"><a href="#数学三真题及答案" class="headerlink" title="数学三真题及答案"></a>数学三真题及答案</h1><p><a href="https://yuxtech.github.io/math/20考研数学三真题.pdf">数学三真题</a><br><a href="https://yuxtech.github.io/math/20考研数学三答案.pdf">数学三答案</a></p>
 
       
 
@@ -267,7 +265,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LaTeX/TikZ</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">考研</a>
         		</li>
       		
 		</ul>
@@ -323,7 +321,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://yuxtech.github.io/2019/09/23/toc/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yuxtech.github.io/2019/12/24/2020kaoyan/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -337,18 +335,9 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
   
 <nav id="article-nav">
   
-    <a href="/2019/10/06/tonglan/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          双栏模板下插入通栏公式和图片
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/09/09/table/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">在LaTeX中自定义新目录</div>
+    <a href="/2019/12/05/moni2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2020年考研数学模拟卷</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -375,7 +364,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#利用titlesec-tocloft-tikz包定制一个目录格式"><span class="toc-number">1.</span> <span class="toc-text">利用titlesec, tocloft, tikz包定制一个目录格式</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#数学一真题及答案"><span class="toc-number">1.</span> <span class="toc-text">数学一真题及答案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数学二真题及答案"><span class="toc-number">2.</span> <span class="toc-text">数学二真题及答案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数学三真题及答案"><span class="toc-number">3.</span> <span class="toc-text">数学三真题及答案</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -392,7 +381,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 
   
   <!--
-<div id="SOHUCS" sid="toc" ></div> 
+<div id="SOHUCS" sid="2020kaoyan" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
@@ -413,7 +402,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "https://yuxtech.github.io/2019/09/23/toc/",
+  id: "https://yuxtech.github.io/2019/12/24/2020kaoyan/",
   owner: 'yuxtech',
   repo: 'yuxtech.github.io',
   oauth: {
