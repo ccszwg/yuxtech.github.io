@@ -8,16 +8,20 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://yuxtech.github.io">
-  <title>Xiang&#39;s Texmath</title>
+  <title>2006-2020年考研数学真题及解答 | Xiang&#39;s Texmath</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="tex math">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Xiang&#39;s Texmath">
-<meta property="og:url" content="https://yuxtech.github.io/page/2/index.html">
+  <meta name="description" content="2006-2020年考研数学真题及解答我把我这用LaTeX几年整理的近15年考研数学真题分享给大家，需要的大家自取。仅供学习使用，大家可以传播，但是不要昧着良心拿着我的文档去倒卖，谢谢！ 数学一真题数学一真题解答 数学二真题数学二真题解答 数学三真题数学三真题解答">
+<meta name="keywords" content="考研">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2006-2020年考研数学真题及解答">
+<meta property="og:url" content="https://yuxtech.github.io/2020/03/04/zhenti/index.html">
 <meta property="og:site_name" content="Xiang&#39;s Texmath">
+<meta property="og:description" content="2006-2020年考研数学真题及解答我把我这用LaTeX几年整理的近15年考研数学真题分享给大家，需要的大家自取。仅供学习使用，大家可以传播，但是不要昧着良心拿着我的文档去倒卖，谢谢！ 数学一真题数学一真题解答 数学二真题数学二真题解答 数学三真题数学三真题解答">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-03-04T04:36:13.975Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xiang&#39;s Texmath">
+<meta name="twitter:title" content="2006-2020年考研数学真题及解答">
+<meta name="twitter:description" content="2006-2020年考研数学真题及解答我把我这用LaTeX几年整理的近15年考研数学真题分享给大家，需要的大家自取。仅供学习使用，大家可以传播，但是不要昧着良心拿着我的文档去倒卖，谢谢！ 数学一真题数学一真题解答 数学二真题数学二真题解答 数学三真题数学三真题解答">
   
 
     <link rel="icon" href="/img/favicon.ico">
@@ -183,36 +187,75 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-table" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-zhenti" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/09/table/">在LaTeX中自定义新目录</a>
+    <h1 class="article-title" itemprop="name">
+      2006-2020年考研数学真题及解答
     </h1>
   
 
         
-        <a href="/2019/09/09/table/" class="archive-article-date">
+        <a href="/2020/03/04/zhenti/" class="archive-article-date">
  
-  	<time datetime="2019-09-09T08:05:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-09</time>
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+  	<time datetime="2020-03-04T04:30:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
 </a>
         
 		
+    <span class="archive-article-date">
+        阅读量 <span id="busuanzi_value_page_pv"></span>
+    </span>
+
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="用tocloft包定义新目录"><a href="#用tocloft包定义新目录" class="headerlink" title="用tocloft包定义新目录"></a>用<code>tocloft</code>包定义新目录</h1><p>在LaTeX中，有三个命令<code>\tableofcontents</code>，<code>\listoftables</code>，<code>\listoffigures</code>，分别用来生成章节目录，表格目录和插图目录。但有时候我们需要生成其他目录，比如书籍中的例题目录，这个时候我们可以利用<code>tocloft</code>包自定义一个例题目录。<code>tocloft</code>包提供了<code>\newlistof</code>命令，其格式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\newlistof[已有计数器count1]&#123;计数器count2&#125;&#123;扩展名&#125;&#123;目录名称&#125;</span><br></pre></td></tr></table></figure></p>
-<p>其中前两个参数等价于命令<code>\newcounter[count1]{count2}</code>，就是让第二个计数器绑定在第一个计数器，并随着第一个计数器的递增而归零。我们给出一个最小工作示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line">\usepackage&#123;tocloft&#125;</span><br><span class="line">\newcommand\listexamplename&#123;例题目录&#125;</span><br><span class="line">\newlistof[section]&#123;exam&#125;&#123;ex&#125;&#123;\listexamplename&#125;</span><br><span class="line">\newenvironment&#123;example&#125;&#123;</span><br><span class="line"> 		\refstepcounter&#123;exam&#125;</span><br><span class="line"> &#125;&#123;\par&#125;</span><br><span class="line">\newcommand&#123;\exam&#125;[1]&#123;%</span><br><span class="line">\par\noindent\textbf&#123;例 \theexam. #1&#125;</span><br><span class="line">\addcontentsline&#123;ex&#125;&#123;exam&#125;&#123;\protect\numberline&#123;\theexam&#125;#1&#125;\par</span><br><span class="line">&#125;</span><br><span class="line">\usepackage[hidelinks]&#123;hyperref&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\listofexam</span><br><span class="line">\section&#123;第一节&#125;</span><br><span class="line">\begin&#123;example&#125;\exam&#123;勾股&#125;</span><br><span class="line">勾股定理</span><br><span class="line">\end&#123;example&#125;</span><br><span class="line">\section&#123;第二节&#125;</span><br><span class="line">\begin&#123;example&#125;\exam&#123;歌德&#125;</span><br><span class="line">哥德巴赫猜想</span><br><span class="line">\end&#123;example&#125;</span><br><span class="line">\section&#123;第三节&#125;</span><br><span class="line">\begin&#123;example&#125;\exam&#123;黎曼&#125;</span><br><span class="line">黎曼猜想</span><br><span class="line">\end&#123;example&#125;</span><br><span class="line"></span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
-<p>和一般的目录一样，需要编译两次，即可生成正确的例题目录。在导言区加入以下代码可生成双栏目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;multicol&#125;</span><br><span class="line">\renewcommand\cftexprehook&#123;\begin&#123;multicols&#125;&#123;2&#125;&#125;</span><br><span class="line">\renewcommand\cftexposthook&#123;\end&#123;multicols&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+        <h1 id="2006-2020年考研数学真题及解答"><a href="#2006-2020年考研数学真题及解答" class="headerlink" title="2006-2020年考研数学真题及解答"></a>2006-2020年考研数学真题及解答</h1><p>我把我这用<code>LaTeX</code>几年整理的近15年考研数学真题分享给大家，需要的大家自取。仅供学习使用，大家可以传播，但是不要昧着良心拿着我的文档去倒卖，谢谢！</p>
+<p><a href="https://yuxtech.github.io/math/数学一真题2006-2020.pdf">数学一真题</a><br><a href="https://yuxtech.github.io/math/数学一真题2006-2020答案.pdf">数学一真题解答</a></p>
+<p><a href="https://yuxtech.github.io/math/数学二真题2006-2020.pdf">数学二真题</a><br><a href="https://yuxtech.github.io/math/数学二真题2006-2020答案.pdf">数学二真题解答</a></p>
+<p><a href="https://yuxtech.github.io/math/数学三真题2006-2020.pdf">数学三真题</a><br><a href="https://yuxtech.github.io/math/数学三真题2006-2020答案.pdf">数学三真题解答</a></p>
 
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://yuxtech.github.io/img/ali.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://yuxtech.github.io/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -223,7 +266,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LaTeX</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">考研</a>
         		</li>
       		
 		</ul>
@@ -232,16 +275,75 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/09/table/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yuxtech.github.io/2020/03/04/zhenti/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/20/complex/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">史济怀复变函数封面设计</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -256,770 +358,67 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
         </div>
         
         
-    </div>
-</aside>
-
-
-
-<!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-
-  
-    <article id="post-latex-animation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/26/latex-animation/">利用tikz和animate包绘制动画图像</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/26/latex-animation/" class="archive-article-date">
- 
-  	<time datetime="2019-08-26T02:12:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-26</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="利用tikz和animate包绘制动画图像"><a href="#利用tikz和animate包绘制动画图像" class="headerlink" title="利用tikz和animate包绘制动画图像"></a>利用tikz和animate包绘制动画图像</h1><p>这篇博文介绍如何利用tikz和animate包绘制动画的pdf，你没看错，是会动的pdf。比如我们上一期给出的那个动态的钟，当然，animate包的动画效果其实是调用了Java Script，而支持Java Script的pdf阅读器并不多，大家输出的动画pdf需要用Adobe Reader来看。下面我们来看动画图像的制作过程：</p>
-<h2 id="首先需要用tikz绘制很多页的格式相同的pdf（这里需要用到tikz的循环句法），下一页pdf只在上一页pdf的基础上有微小的变化，然后再用animate包的命令"><a href="#首先需要用tikz绘制很多页的格式相同的pdf（这里需要用到tikz的循环句法），下一页pdf只在上一页pdf的基础上有微小的变化，然后再用animate包的命令" class="headerlink" title="首先需要用tikz绘制很多页的格式相同的pdf（这里需要用到tikz的循环句法），下一页pdf只在上一页pdf的基础上有微小的变化，然后再用animate包的命令"></a>首先需要用tikz绘制很多页的格式相同的pdf（这里需要用到tikz的循环句法），下一页pdf只在上一页pdf的基础上有微小的变化，然后再用animate包的命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\animategraphics[&lt;可选项&gt;]&#123;每秒帧数&#125;&#123;pdf文件名称&#125;&#123;起始页&#125;&#123;结束页&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="将整个生成的pdf从起始页到结束页的所有页按照每秒一定的帧数进行播放，就像动画片一样，看起来就变成一个动画了，而可选项则是一系列的播放设置，比如循环播放，设置暂停键，动画命名等。比如我们用"><a href="#将整个生成的pdf从起始页到结束页的所有页按照每秒一定的帧数进行播放，就像动画片一样，看起来就变成一个动画了，而可选项则是一系列的播放设置，比如循环播放，设置暂停键，动画命名等。比如我们用" class="headerlink" title="将整个生成的pdf从起始页到结束页的所有页按照每秒一定的帧数进行播放，就像动画片一样，看起来就变成一个动画了，而可选项则是一系列的播放设置，比如循环播放，设置暂停键，动画命名等。比如我们用"></a>将整个生成的pdf从起始页到结束页的所有页按照每秒一定的帧数进行播放，就像动画片一样，看起来就变成一个动画了，而可选项则是一系列的播放设置，比如循环播放，设置暂停键，动画命名等。比如我们用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[tikz,border=2pt]&#123;standalone&#125;</span><br><span class="line">\usepackage&#123;amsmath&#125;</span><br><span class="line">\usepackage[UTF8]&#123;ctex&#125;</span><br><span class="line">\usepackage[Symbol]&#123;upgreek&#125;</span><br><span class="line">\usetikzlibrary&#123;decorations.shapes,patterns,decorations.text&#125;</span><br><span class="line">\usepackage&#123;pgfornament&#125;</span><br><span class="line"></span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\foreach \i in &#123;0,0.5,...,359.5&#125; &#123;</span><br><span class="line">\begin&#123;tikzpicture&#125;</span><br><span class="line">\foreach \x in &#123;0,60,120,180,240,300&#125;</span><br><span class="line">\fill[blue!80,rotate=-\i](\x:1.3)circle(2);</span><br><span class="line">\fill[white](0,0)circle(2.9);</span><br><span class="line">\filldraw[draw=blue,very thick,pattern=fivepointed stars,pattern color=blue!15](0,0)circle(2.7cm);</span><br><span class="line">\node[scale=18,blue] at (0,0)&#123;$\uppi$&#125;;</span><br><span class="line">\node[white] at(0,1.44)&#123;$\uppi=3.141592653$&#125;;</span><br><span class="line">\node[white,rotate=-90,scale=0.7] at (0.53,0)&#123;$\sum_&#123;n=1&#125;^\infty\frac1&#123;n^2&#125;=\frac&#123;\uppi^2&#125;6$&#125;;</span><br><span class="line">\node[white,rotate=-90,scale=0.7] at (-0.62,0)&#123;$\lim\frac&#123;\sin x&#125;x=1$&#125;;</span><br><span class="line">\node[blue,scale=0.23] at (0,-2.1)&#123;\pgfornament&#123;87&#125;&#125;;</span><br><span class="line">\draw[decorate,decoration=&#123;text along path,text=</span><br><span class="line">&#123;&#123;\kaishu \Large\color&#123;blue&#125;天&#125;&#123;\kaishu\Large\color&#123;blue&#125; 生&#125;&#123;\kaishu\Large\color&#123;blue&#125; 我&#125;&#123;\kaishu\Large\color&#123;blue&#125; 才&#125;&#123;\kaishu\Large\color&#123;blue&#125; 项&#125;&#123;\kaishu\Large\color&#123;blue&#125; 目&#125;&#123;\kaishu\Large\color&#123;blue&#125; 组&#125;</span><br><span class="line">&#125;&#125;](121:3.4)arc(121:60:3.4);</span><br><span class="line">\draw[decorate,decoration=&#123;text along path,text=&#123;|\color&#123;blue&#125;\Large|Project Team of Inborn Genius||&#125;&#125;](-141:3.7) arc (-141:-39:3.7);</span><br><span class="line">\draw[line width=3pt,blue](0,0)circle(4);</span><br><span class="line">\end&#123;tikzpicture&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="生成一个包含720页的pdf（比如pdf的名称叫rotate，估计生成这个pdf需要两分钟），它的下一页总是在上一页的基础上旋转0-5度，这样的差别非常小。然后在包含此pdf的同一个文件夹下新建一个tex文件如下："><a href="#生成一个包含720页的pdf（比如pdf的名称叫rotate，估计生成这个pdf需要两分钟），它的下一页总是在上一页的基础上旋转0-5度，这样的差别非常小。然后在包含此pdf的同一个文件夹下新建一个tex文件如下：" class="headerlink" title="生成一个包含720页的pdf（比如pdf的名称叫rotate，估计生成这个pdf需要两分钟），它的下一页总是在上一页的基础上旋转0.5度，这样的差别非常小。然后在包含此pdf的同一个文件夹下新建一个tex文件如下："></a>生成一个包含720页的pdf（比如pdf的名称叫rotate，估计生成这个pdf需要两分钟），它的下一页总是在上一页的基础上旋转0.5度，这样的差别非常小。然后在包含此pdf的同一个文件夹下新建一个tex文件如下：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;article&#125;</span><br><span class="line">\usepackage&#123;animate,media9,graphicx&#125;</span><br><span class="line">\pagestyle&#123;empty&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\begin&#123;center&#125;</span><br><span class="line">\animategraphics[label=taylor,autoplay,loop]&#123;1&#125;&#123;rotate&#125;&#123;&#125;&#123;&#125;</span><br><span class="line">\end&#123;center&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<p>这里起始页和结尾页为空就默认为从第一页到最后一页，运行这个tex文件就可以把上面生成的名称为rotate的720页pdf合成一页。我这里选定的是每秒一帧，大家视情况自己更改帧率，如果运行了一次没看到动画效果，就再运行一次，然后一定要用Adobe Reader才能看到动画效果。</p>
-<p><strong>转载请注明出处，谢谢！</strong></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">TikZ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/26/latex-animation/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2006-2020年考研数学真题及解答"><span class="toc-number">1.</span> <span class="toc-text">2006-2020年考研数学真题及解答</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-<!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-
   
-    <article id="post-clock" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/16/clock/">用LaTeX绘制的动态时钟</a>
-    </h1>
   
 
-        
-        <a href="/2019/08/16/clock/" class="archive-article-date">
- 
-  	<time datetime="2019-08-16T10:43:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这是用<code>tikz</code>绘制了大量的pdf图片以后再用animation包生成的pdf文档，是一个动态的时钟，大家下载以后可以用<code>adobe reader</code>阅读器查看动画效果<br><a href="https://yuxtech.github.io/tex/动态时钟.pdf">动态时钟</a><br>
+  
+  <!--
+<div id="SOHUCS" sid="zhenti" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cysXCghbr",
+        conf: "c9c5c4144766cfcea9c2ab8b6a44650c"
+    });
+</script>
+</script>
+-->
+  
 
-	<div class="row">
-    <embed src="https://yuxtech.github.io/tex/动态时钟.pdf" width="100%" height="550" type="application/pdf">
-	</div>
+  
 
-
-</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">TikZ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/16/clock/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
+  
+  <!--
+<div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "https://yuxtech.github.io/2020/03/04/zhenti/",
+  owner: 'yuxtech',
+  repo: 'yuxtech.github.io',
+  oauth: {
+    client_id: 'cf0cc92bfce237008756',
+    client_secret: '270f5c92ad6a512eb61e7fb875a98f14b8583227',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+-->
+  
 
 <!-- 目录内容 -->
              
         <!-- 目录内容结束 -->
-
-  
-    <article id="post-package" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/05/package/">宏包的重复加载与宏包选项的传递</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/05/package/" class="archive-article-date">
- 
-  	<time datetime="2019-08-05T01:18:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="宏包重复加载的问题"><a href="#宏包重复加载的问题" class="headerlink" title="宏包重复加载的问题"></a>宏包重复加载的问题</h1><p>很多人（多指新手）喜欢复制粘贴别人的代码，也不管代码中的设置是干什么的，也不懂加载的宏包是干什么的，所以经常复制粘贴就出现重复加载宏包的问题。以<code>xcolor</code>包为例，原则上加载宏包只需要在导言区输入一次<code>\usepackage{xcolor}</code>即可，如果需要加载<code>xcolor</code>的可选项就输入<code>\usepackage[option1,option2]{xcolor}</code>。但是有的人使用过程中就喜欢重复加载，多半是百度到啥就复制了啥。一般而言，重复加载是没有问题的，用<code>\usepackage</code>的方式加载的宏包有一个好处是重复加载的时候只有第一次加载有效，后面的重复加载会被忽略。但是这么说其实是有前提的，就是第二次加载的可选项不得超出第一加载的可选项。举例来说<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;ctexart&#125;</span><br><span class="line">\usepackage&#123;xcolor&#125;</span><br><span class="line">\usepackage&#123;xcolor&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\color&#123;red!40&#125;这是百分之40的红色。</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
-<p>和<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;ctexart&#125;</span><br><span class="line">\usepackage[dvipsnames,usenames]&#123;xcolor&#125;</span><br><span class="line">\usepackage[dvipsnames]&#123;xcolor&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\color&#123;Maroon&#125;这是褐红色。</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
-<p>都是没问题的，第二次加载的选项不超过第一次加载的选项，因此第二次加载都会被忽略，仅第一次加载有效。但是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;ctexart&#125;</span><br><span class="line">\usepackage[dvipsnames]&#123;xcolor&#125;</span><br><span class="line">\usepackage[dvipsnames,usenames]&#123;xcolor&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\color&#123;Maroon&#125;这是褐红色。</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
-<p>就会报错<code>option clash for package xcolor</code>，因为第二次加载比第一次多了选项<code>usenames</code>，从而报错了<code>xcolor</code>宏包选项冲突。总之，如果加载宏包最好不要重复加载，一次性把需要的选项都加载进来，避免后续冲突。</p>
-<h1 id="利用-documentclass传递宏包选项"><a href="#利用-documentclass传递宏包选项" class="headerlink" title="利用\documentclass传递宏包选项"></a>利用<code>\documentclass</code>传递宏包选项</h1><p>正常情况下，宏包选项支持由<code>\documentclass</code>的可选项进行传递，比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[dvipsnames,usenames,leqno,listings]&#123;ctexart&#125;</span><br><span class="line">\usepackage[x11names]&#123;xcolor&#125;</span><br><span class="line">\usepackage[sumlimits]&#123;amsmath&#125;</span><br><span class="line">\usepackage&#123;tcolorbox&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">&#123;\color&#123;Maroon&#125;这是褐红色。&#125;</span><br><span class="line">\begin&#123;equation&#125;</span><br><span class="line">\text&#123;公式编号在左&#125;</span><br><span class="line">\end&#123;equation&#125;</span><br><span class="line">\begin&#123;tcblisting&#125;&#123;&#125;</span><br><span class="line">tcolorbox的摘录环境</span><br><span class="line">\end&#123;tcblisting&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
-<p>就分别将选项<code>dvipsnames,usenames</code>传递给<code>xcolor</code>包，将选项<code>leqno</code>传递给<code>amsmath</code>包，将选项<code>listings</code>传递给<code>tcolorbox</code>包，并且即使我们在后续加载<code>xcolor</code>包的时候增加了可选项<code>x11names</code>，也不会产生冲突。但是注意<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[dvipsnames,usenames]&#123;ctexart&#125;</span><br><span class="line">\usepackage[x11names]&#123;xcolor&#125;</span><br><span class="line">\usepackage[divpnames,usenames]&#123;xcolor&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\color&#123;Maroon&#125;这是褐红色。</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
-<p>是会产生冲突的，总之避免重复加载同一个宏包，除非你知道如何解决冲突。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LaTeX</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/05/package/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-<!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-
-  
-    <article id="post-listings" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/30/listings/">解决listings环境无法嵌套的问题</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/30/listings/" class="archive-article-date">
- 
-  	<time datetime="2019-07-30T14:52:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-30</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在LaTeX的摘录环境中，<code>listings</code>包提供的<code>lstlisting</code>环境无疑是最优秀的，它支持现在的多种计算机语言，提供了语法高亮功能，还有各种摘录设置。但是最近有群员询问有关lstlisting环境无法嵌套的问题：比如下面的问题，</p>
-<p><div align="center">
-  <img width="600" src="https://yuxtech.github.io/img/listings.png">
-</div><br>如果使用两个lstlisting环境嵌套，会使得第一个<code>\begin{lstlisting}</code>匹配到第一个<code>\end{lstlisting}</code>而使得第二个报错。比较不错的解决方法就是把外层的摘录环境换成<code>verbatim</code>，不过由于个人比较喜欢<code>listings</code>包的风格，所以这里采用<code>tcolorbox</code>包的<code>listings</code>库提供的<code>tcblisting</code>环境。<code>tcblisting</code>环境其实就是调用的<code>listings</code>包，它一方面接受<code>listings</code>包的设置，另一方面还接受<code>tcolorbox</code>包的设置，简直一举两得。默认情况下，摘录的同时还执行摘录的代码，所以这里添加了<code>listing only</code>选项，仅仅作摘录使用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;ctexart&#125;</span><br><span class="line">\usepackage&#123;tcolorbox&#125;</span><br><span class="line">\tcbuselibrary&#123;listings&#125;</span><br><span class="line">\lstdefinestyle&#123;mystyle&#125;&#123;</span><br><span class="line">  basicstyle=%</span><br><span class="line">    \ttfamily</span><br><span class="line">    \lst@ifdisplaystyle\small\fi</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">\lstset&#123;basicstyle=\ttfamily,style=mystyle&#125;</span><br><span class="line"></span><br><span class="line">\definecolor&#123;structurecolor&#125;&#123;RGB&#125;&#123;0,120,2&#125;%</span><br><span class="line">\definecolor&#123;winered&#125;&#123;rgb&#125;&#123;0.5,0,0&#125;</span><br><span class="line">\definecolor&#123;lightgrey&#125;&#123;rgb&#125;&#123;0.9,0.9,0.9&#125;</span><br><span class="line">\definecolor&#123;frenchplum&#125;&#123;RGB&#125;&#123;190,20,83&#125;</span><br><span class="line">\lstset&#123;language=[LaTeX]TeX,</span><br><span class="line">	texcsstyle=*\color&#123;winered&#125;,</span><br><span class="line">	numbers=none,</span><br><span class="line">	breaklines=true,</span><br><span class="line">	keywordstyle=\color&#123;winered&#125;,</span><br><span class="line">	commentstyle=\color&#123;gray&#125;,</span><br><span class="line">	emph=&#123;main,none,fontenc,fontspec,xeCJK,FiraMono,xunicode,newtxmath,figure,fig,image,img,table,itemize,enumerate,newtxtext,newtxtt,ctex,microtype,description,times,newtx,booktabs,tabular,PDFLaTeX,XeLaTeX,type1cm,BibTeX,device,color,mode,lang,amsthm,tcolorbox,titlestyle,cite,marginnote,ctex,listings&#125;,</span><br><span class="line">	emphstyle=&#123;\color&#123;frenchplum&#125;&#125;,</span><br><span class="line">	morekeywords=&#123;main,DeclareSymbolFont,SetSymbolFont,toprule,midrule,bottomrule,institute,version,includegraphics,setmainfont,setsansfont,setmonofont ,setCJKmainfont,setCJKsansfont,setCJKmonofont,RequirePackage,figref,tabref,email,maketitle,keywords,definecolor,extrainfo,logo,cover,subtitle,appendix,chapter,hypersetup,mainmatter,tableofcontents,elegantpar,numbers,authoryear,heiti,kaishu,lstset,pagecolor,zhnumber,marginpar,part,equote&#125;,</span><br><span class="line">	frame=single,</span><br><span class="line">	tabsize=2,</span><br><span class="line">	rulecolor=\color&#123;structurecolor&#125;,</span><br><span class="line">	framerule=0pt,</span><br><span class="line">	columns=flexible,</span><br><span class="line">	% backgroundcolor=\color&#123;lightgrey&#125;</span><br><span class="line">&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\begin&#123;tcblisting&#125;&#123;listing only,boxrule=-1pt,colback=white&#125;</span><br><span class="line">\begin&#123;lstlisting&#125;[language=Fortran,frame=single]</span><br><span class="line">program main</span><br><span class="line">implicit none</span><br><span class="line">real(kind=8):: em,rmax,rkmax</span><br><span class="line">end</span><br><span class="line">\end&#123;lstlisting&#125;</span><br><span class="line">\end&#123;tcblisting&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LaTeX</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/30/listings/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-<!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-
-  
-    <article id="post-公式编号" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/20/公式编号/">LaTeX公式编号技巧</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/20/公式编号/" class="archive-article-date">
- 
-  	<time datetime="2019-07-20T07:52:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://yuxtech.github.io/tex/latex公式编号技巧.pdf">LaTeX公式编号技巧</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8,no-math,12pt,openany,table,dvipsnames,svgnames]&#123;article&#125;</span><br><span class="line">\usepackage&#123;indentfirst&#125;</span><br><span class="line">\usepackage&#123;ctex,amsmath,amssymb,mathrsfs&#125;</span><br><span class="line">\usepackage[centering,</span><br><span class="line">           top=2.54cm,bottom=2.54cm,right=2.9cm,left=2.9cm,</span><br><span class="line">           headsep=25pt,headheight=20pt]&#123;geometry&#125;</span><br><span class="line">\setmainfont&#123;Times New Roman&#125;</span><br><span class="line">\usepackage&#123;tcolorbox&#125;</span><br><span class="line">\tcbuselibrary&#123;listings,breakable&#125;</span><br><span class="line">\tcbset&#123;boxrule=0pt,sharp corners&#125;</span><br><span class="line">\usepackage[hyperindex]&#123;hyperref&#125;</span><br><span class="line">\hypersetup&#123;bookmarksopen=true,bookmarksopenlevel=1,bookmarksnumbered=true,</span><br><span class="line">  pdftitle=&#123;行间公式的编号技巧&#125;,pdfauthor=&#123;向禹&#125;,linktoc=page,</span><br><span class="line">  colorlinks,linkcolor=blue,citecolor=red,urlcolor=blue,anchorcolor=green&#125;</span><br><span class="line">\definecolor&#123;structurecolor&#125;&#123;RGB&#125;&#123;0,120,2&#125;%</span><br><span class="line">\definecolor&#123;winered&#125;&#123;rgb&#125;&#123;0.5,0,0&#125;</span><br><span class="line">\renewcommand&#123;\ttdefault&#125;&#123;cmtt&#125;</span><br><span class="line">\lstdefinestyle&#123;mystyle&#125;&#123;</span><br><span class="line">  basicstyle=%</span><br><span class="line">    \ttfamily</span><br><span class="line">    \lst@ifdisplaystyle\small\fi</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">\lstset&#123;basicstyle=\ttfamily,style=mystyle&#125;</span><br><span class="line"></span><br><span class="line">\definecolor&#123;lightgrey&#125;&#123;rgb&#125;&#123;0.9,0.9,0.9&#125;</span><br><span class="line">\definecolor&#123;frenchplum&#125;&#123;RGB&#125;&#123;190,20,83&#125;</span><br><span class="line">\lstset&#123;language=[LaTeX]TeX,</span><br><span class="line">	texcsstyle=*\color&#123;winered&#125;,</span><br><span class="line">	numbers=none,</span><br><span class="line">	breaklines=true,</span><br><span class="line">	keywordstyle=\color&#123;winered&#125;,</span><br><span class="line">	commentstyle=\color&#123;gray&#125;,</span><br><span class="line">	emph=&#123;fontenc,fontspec,xeCJK,FiraMono,xunicode,newtxmath,figure,fig,image,img,table,itemize,enumerate,newtxtext,newtxtt,ctex,microtype,description,times,newtx,booktabs,tabular,PDFLaTeX,XeLaTeX,type1cm,BibTeX,device,color,mode,lang,amsthm,tcolorbox,titlestyle,cite,marginnote,ctex,listings&#125;,</span><br><span class="line">	emphstyle=&#123;\color&#123;frenchplum&#125;&#125;,</span><br><span class="line">	morekeywords=&#123;DeclareSymbolFont,SetSymbolFont,toprule,midrule,bottomrule,institute,version,includegraphics,setmainfont,setsansfont,setmonofont ,setCJKmainfont,setCJKsansfont,setCJKmonofont,RequirePackage,figref,tabref,email,maketitle,keywords,definecolor,extrainfo,logo,cover,subtitle,appendix,chapter,hypersetup,mainmatter,tableofcontents,elegantpar,numbers,authoryear,heiti,kaishu,lstset,pagecolor,zhnumber,marginpar,part,equote&#125;,</span><br><span class="line">	frame=single,</span><br><span class="line">	tabsize=2,</span><br><span class="line">	rulecolor=\color&#123;structurecolor&#125;,</span><br><span class="line">	framerule=0pt,</span><br><span class="line">	columns=flexible,</span><br><span class="line">	% backgroundcolor=\color&#123;lightgrey&#125;</span><br><span class="line">&#125;</span><br><span class="line">\numberwithin&#123;equation&#125;&#123;section&#125;</span><br><span class="line">\usepackage&#123;cases,empheq&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\title&#123;多行公式的编号技巧&#125;\date&#123;\empty&#125;</span><br><span class="line">\maketitle</span><br><span class="line">\href&#123;https://yuxtech.github.io/tex/amsmath.pdf&#125;&#123;amsmath包&#125; 对于行间公式的输出提供了非常强大的功能,我们今天则是介绍基于\textbf&#123;amsmath&#125;包如何去实现特定的多行公式编号技巧.</span><br><span class="line"></span><br><span class="line">\section&#123;多行公式一个编号&#125;</span><br><span class="line">在换行的公式中,如果直接用\textbf&#123;align&#125;环境会给每行都编号, \textbf&#123;align*&#125;环境则每一行都没有编号.但是我们可以用\verb|\notag|命令指定某些行不编号,如</span><br><span class="line">\begin&#123;tcblisting&#125;&#123;sidebyside&#125;</span><br><span class="line">\begin&#123;align&#125;</span><br><span class="line">a&amp;=b+c\notag\\</span><br><span class="line">a^2&amp;=b^2+c^2\\</span><br><span class="line">a^3&amp;=b^3+c^3\notag</span><br><span class="line">\end&#123;align&#125;</span><br><span class="line">\end&#123;tcblisting&#125;</span><br><span class="line">除了用\textbf&#123;align&#125;环境之外,我们还可以用次环境\textbf&#123;aligned&#125;来更好地实现这种效果</span><br><span class="line">\begin&#123;tcblisting&#125;&#123;sidebyside&#125;</span><br><span class="line">\begin&#123;align&#125;\begin&#123;aligned&#125;</span><br><span class="line">a&amp;=b+c\\</span><br><span class="line">a^2&amp;=b^2+c^2</span><br><span class="line">\end&#123;aligned&#125;\end&#123;align&#125;</span><br><span class="line">\end&#123;tcblisting&#125;</span><br><span class="line">\textbf&#123;aligned&#125;环境可以看成一个盒子,我们还可以给这个盒子添加定界符</span><br><span class="line">\begin&#123;tcblisting&#125;&#123;sidebyside&#125;</span><br><span class="line">\begin&#123;align&#125;</span><br><span class="line">\left\&#123;\begin&#123;aligned&#125;</span><br><span class="line">&amp;a=b+c\\</span><br><span class="line">&amp;a^2=b^2+c^2</span><br><span class="line">\end&#123;aligned&#125;\right.\end&#123;align&#125;</span><br><span class="line">\end&#123;tcblisting&#125;</span><br><span class="line">指定不同块按等号对齐,同时每个区块一个编号,这时用\textbf&#123;split&#125;次环境</span><br><span class="line">\begin&#123;tcblisting&#125;&#123;sidebyside&#125;</span><br><span class="line">\begin&#123;align&#125;</span><br><span class="line">a+b&amp;=b+c\\</span><br><span class="line">\begin&#123;split&#125;</span><br><span class="line">a&amp;=b+c\\</span><br><span class="line">a^2&amp;=b^2+c^2</span><br><span class="line">\end&#123;split&#125;\\</span><br><span class="line">\begin&#123;split&#125;</span><br><span class="line">a&amp;=b+c\\</span><br><span class="line">a^2&amp;=b^2+c^2</span><br><span class="line">\end&#123;split&#125;</span><br><span class="line">\end&#123;align&#125;</span><br><span class="line">\end&#123;tcblisting&#125;</span><br><span class="line">一行两个公式两个编号,这种情况自然需要\textbf&#123;minipage&#125;环境支持了.</span><br><span class="line">\begin&#123;tcblisting&#125;&#123;&#125;</span><br><span class="line">\begin&#123;minipage&#125;&#123;0.5\textwidth&#125;</span><br><span class="line">\begin&#123;equation&#125;</span><br><span class="line">a^2+b^2=c^2</span><br><span class="line">\end&#123;equation&#125;</span><br><span class="line">\end&#123;minipage&#125;</span><br><span class="line">\begin&#123;minipage&#125;&#123;0.5\textwidth&#125;</span><br><span class="line">\begin&#123;equation&#125;</span><br><span class="line">a^3=b^3+c^3</span><br><span class="line">\end&#123;equation&#125;</span><br><span class="line">\end&#123;minipage&#125;</span><br><span class="line">\end&#123;tcblisting&#125;</span><br><span class="line">给带定界符的方程组的每一行都编号,这种情况\textbf&#123;amsmath&#125;包无法实现,我们可以用\textbf&#123;cases&#125;包的\textbf&#123;numcases&#125;环境</span><br><span class="line">\begin&#123;tcblisting&#125;&#123;sidebyside&#125;</span><br><span class="line">%\usepackage&#123;cases&#125;</span><br><span class="line">\begin&#123;numcases&#125;&#123;f(x)=&#125;%f(x)=可以置空</span><br><span class="line">1,&amp;$x\in\mathbb Q$\\</span><br><span class="line">0,&amp;$x\notin\mathbb Q$</span><br><span class="line">\end&#123;numcases&#125;.</span><br><span class="line">\end&#123;tcblisting&#125;</span><br><span class="line">不过上述\textbf&#123;numcases&#125;环境的效果是不尽如人意的,更好的效果是用\textbf&#123;empheq&#125;包,它可以给\textbf&#123;amsmath&#125;包提供的数学环境添加各种定界符.</span><br><span class="line">\begin&#123;tcblisting&#125;&#123;sidebyside&#125;</span><br><span class="line">\begin&#123;empheq&#125;[left=\empheqlbrace,right=\empheqrbrack]&#123;align&#125;</span><br><span class="line">&amp;a=b+c&amp;&amp;a=b\\</span><br><span class="line">&amp;a^2=b^2+c^2&amp;&amp;a=b</span><br><span class="line">\end&#123;empheq&#125;</span><br><span class="line">\end&#123;tcblisting&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LaTeX</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/20/公式编号/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-<!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-
-  
-    <article id="post-imo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/18/imo/">imo平面几何题</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/18/imo/" class="archive-article-date">
- 
-  	<time datetime="2019-07-18T00:56:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="用tkz-euclide包绘制平面几何图形"><a href="#用tkz-euclide包绘制平面几何图形" class="headerlink" title="用tkz-euclide包绘制平面几何图形"></a>用tkz-euclide包绘制平面几何图形</h1>
-
-	<div class="row">
-    <embed src="https://yuxtech.github.io/math/imo平面几何.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;ctexart&#125;</span><br><span class="line">\usepackage[centering,</span><br><span class="line">           top=2.54cm,bottom=2.54cm,right=2.9cm,left=2.9cm,</span><br><span class="line">           headsep=25pt,headheight=20pt]&#123;geometry&#125;</span><br><span class="line">\setmainfont&#123;Times New Roman&#125;</span><br><span class="line">\usepackage&#123;tkz-euclide&#125;</span><br><span class="line">\usetkzobj&#123;all&#125;</span><br><span class="line">\usepackage[zswash]&#123;mtpro2&#125;</span><br><span class="line">\usepackage[most]&#123;tcolorbox&#125;</span><br><span class="line">\usepackage&#123;varwidth&#125;</span><br><span class="line">\newtcolorbox&#123;MYBOX&#125;[2][]&#123;breakable,skin=enhancedlast jigsaw,before skip=2mm,enhanced,</span><br><span class="line">after skip=2mm,colback=blue!5,colframe=blue!50,boxrule=0.2mm,sharp corners,</span><br><span class="line">attach boxed title to top left=&#123;xshift=0.29cm,yshift*=1mm-\tcboxedtitleheight&#125;,</span><br><span class="line">varwidth boxed title*=-3cm,</span><br><span class="line">boxed title style=&#123;frame code=&#123;</span><br><span class="line">   \path[fill=tcbcol@back!30!black]</span><br><span class="line">     ([yshift=-1mm,xshift=-1mm]frame.north west)</span><br><span class="line">       arc[start angle=0,end angle=180,radius=1mm]</span><br><span class="line">     ([yshift=-1mm,xshift=1mm]frame.north east)</span><br><span class="line">       arc[start angle =180,end angle=0,radius=1mm];</span><br><span class="line">     \path[left color=tcbcol@back!60!black,right color=tcbcol@back!60!black,</span><br><span class="line">      middle color=tcbcol@back!80!black]</span><br><span class="line">      ([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)</span><br><span class="line">      [rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)</span><br><span class="line">      -- (frame.south east) -- (frame.south west)</span><br><span class="line">      -- ([xshift=-1mm,yshift=-1mm]frame.north west)</span><br><span class="line">      [sharp corners]-- cycle;</span><br><span class="line">      &#125;,interior engine=empty,</span><br><span class="line">     &#125;,</span><br><span class="line">     fonttitle=\bfseries,</span><br><span class="line">     title=&#123;#2&#125;,#1&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\begin&#123;MYBOX&#125;[colbacktitle=blue,sidebyside,righthand width=6cm]&#123;IMO第一天平面几何题&#125;</span><br><span class="line">在三角形$ABC$中,点$A_1$在边$BC$上,点$B_1$在边$AC$上.点$P$和点$Q$分别在线段$AA_1,BB_1$上,满足$PQ$与$AB$平行.设$P_1$是直线$PB_1$上一点,满足$B_1$在线段$PP_1$上（不含端点）且$\angle PP_1C=\angle BAC$,类似地在直线$QA_1$上定义点$Q_1$,使得$A_1$在线段$QQ_1$上（不含端点）,且$\angle CQ_1Q=\angle CBA$.证明: $P,Q,P_1,Q_1$四点共圆.</span><br><span class="line">\tcblower</span><br><span class="line">\begin&#123;tikzpicture&#125;[scale=1.2]</span><br><span class="line">\tkzInit[xmin=-1,ymin=-0.5,ymax=4.4,xmax=4.4]</span><br><span class="line">\tkzClip</span><br><span class="line">\tkzDefPoints&#123;0/0/A,4/0/B,1.2/2.8/C&#125;</span><br><span class="line">\draw(A)node[below]&#123;$A$&#125;--(B)node[below]&#123;$B$&#125;--(C)node[above]&#123;$C$&#125;--cycle;</span><br><span class="line">\tkzDefBarycentricPoint(A=1.8,C=1.6)\tkzGetPoint&#123;B1&#125;</span><br><span class="line">\tkzDefBarycentricPoint(B=2,C=3.3)\tkzGetPoint&#123;A1&#125;</span><br><span class="line">\draw(B)--(B1)node[left]&#123;$B_1$&#125;(A)--(A1)node[right]&#123;$A_1$&#125;;</span><br><span class="line">\tkzDefBarycentricPoint(A=1.8,A1=1.2)\tkzGetPoint&#123;P&#125;</span><br><span class="line">\node[below]at(P)&#123;$P$&#125;;</span><br><span class="line">\tkzDefLine[parallel=through P](A,B)\tkzGetPoint&#123;P&apos;&#125;</span><br><span class="line">\tkzInterLL(P,P&apos;)(B,B1)\tkzGetPoint&#123;Q&#125;</span><br><span class="line">\draw(P)--(Q)node[below]&#123;$Q$&#125;;</span><br><span class="line">\tkzInterLL(P,B1)(A,B)\tkzGetPoint&#123;D&#125;</span><br><span class="line">\tkzFindAngle(A,D,P)\tkzGetAngle&#123;ADP&#125;</span><br><span class="line">\tkzDefPointBy[rotation=center C angle \ADP](A)\tkzGetPoint&#123;E&#125;</span><br><span class="line">\tkzInterLL(C,E)(P,B1)\tkzGetPoint&#123;P1&#125;</span><br><span class="line">\draw(C)--(P1)node[left]&#123;$P_1$&#125;--(B1)--(P);</span><br><span class="line">\tkzInterLL(Q,A1)(A,B)\tkzGetPoint&#123;F&#125;</span><br><span class="line">\tkzFindAngle(B,F,Q)\tkzGetAngle&#123;BFQ&#125;</span><br><span class="line">\tkzDefPointBy[rotation=center C angle \BFQ](B)\tkzGetPoint&#123;G&#125;</span><br><span class="line">\tkzInterLL(C,G)(Q,A1)\tkzGetPoint&#123;Q1&#125;</span><br><span class="line">\draw(C)--(Q1)node[right]&#123;$Q_1$&#125;--(A1)--(Q);</span><br><span class="line">\tkzDrawCircle[circum,densely dashed,draw=red](P1,P,Q)</span><br><span class="line">\tkzSetUpPoint[size=3,color=blue]</span><br><span class="line">\tkzDrawPoints(A,B,C,P,Q,A1,B1,C,P1,Q1)</span><br><span class="line">\end&#123;tikzpicture&#125;</span><br><span class="line">\end&#123;MYBOX&#125;</span><br><span class="line">\begin&#123;MYBOX&#125;[colbacktitle=blue,sidebyside,righthand width=7.8cm]&#123;IMO第二天平面几何题&#125;</span><br><span class="line">在锐角三角形$ABC$中, $I$是内心, $AB\ne AC$.三角形$ABC$的内切圆$\omega$与边$BC,CA$和$AB$分别相切于点$D,E$和$F$,过点$D$且垂直于$EF$的直线与$\omega$的另一交点为$R$,直线$AR$与$\omega$的令以交点为$P$,三角形$PCE$和三角形$PBF$的外接圆交于另一点$Q$.证明: 直线$DI$和$PQ$的交点在过点$A$且垂直于$AI$的直线上.</span><br><span class="line">\tcblower</span><br><span class="line">\begin&#123;tikzpicture&#125;[scale=1.4]</span><br><span class="line">\tkzInit[xmin=-0.3,xmax=5.7,ymin=-1.8,ymax=3.5]</span><br><span class="line">\tkzClip</span><br><span class="line">\tkzSetUpPoint[size=5,fill=blue,color=blue]</span><br><span class="line">\draw(0,0)coordinate(B) node[below left]&#123;$B$&#125;--(5,0)coordinate(C)node[below]&#123;$C$&#125;</span><br><span class="line">--(3.8,3.2)coordinate(A)node[above]&#123;$A$&#125;--cycle;</span><br><span class="line">\tkzInCenter(A,B,C)\tkzGetPoint&#123;I&#125;</span><br><span class="line">\tkzDefPointBy[projection=onto B--C](I)\tkzGetPoint&#123;D&#125;</span><br><span class="line">\tkzDefPointBy[projection=onto A--C](I)\tkzGetPoint&#123;E&#125;</span><br><span class="line">\tkzDefPointBy[projection=onto A--B](I)\tkzGetPoint&#123;F&#125;</span><br><span class="line">\tkzDrawCircle[draw=blue](I,D)</span><br><span class="line">\tkzDefLine[perpendicular=through D](E,F)\tkzGetPoint&#123;R&apos;&#125;</span><br><span class="line">\tkzInterLC(D,R&apos;)(I,D)\tkzGetPoints&#123;R&#125;&#123;D&#125;</span><br><span class="line">\tkzInterLC(A,R)(I,D)\tkzGetPoints&#123;R&#125;&#123;P&#125;</span><br><span class="line">\tkzDrawSegments(E,F A,I D,R A,P)</span><br><span class="line">\tkzCircumCenter(P,C,E)\tkzGetPoint&#123;O1&#125;</span><br><span class="line">\tkzCircumCenter(P,B,F)\tkzGetPoint&#123;O2&#125;</span><br><span class="line">\tkzInterCC(O1,P)(O2,P)\tkzGetPoints&#123;P&#125;&#123;Q&#125;</span><br><span class="line">\tkzDrawCircle[draw=magenta](O1,P)\tkzDrawCircle[draw=magenta](O2,P)</span><br><span class="line">\tkzInterLL(D,I)(P,Q)\tkzGetPoint&#123;M&#125;</span><br><span class="line">\tkzDrawSegments(D,M A,M P,M)</span><br><span class="line">\tkzLabelPoints[above](E,F)</span><br><span class="line">\tkzLabelPoints[left](M,I,P,Q,R)</span><br><span class="line">\tkzDrawPoints(A,B,C,D,E,F,P,Q,M,R,I)</span><br><span class="line">\tkzMarkRightAngle[scale=0.5](M,A,I)</span><br><span class="line">\tkzLabelCircle[left=2pt](I,D)(-60)&#123;$\omega$&#125;</span><br><span class="line">\node[below]at(D)&#123;$D$&#125;;</span><br><span class="line">\end&#123;tikzpicture&#125;</span><br><span class="line">\end&#123;MYBOX&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
-<p>编译的时候注意，如果没有安装<code>mtpro2</code>包的请注释掉此包，<code>texlive2018</code>可以直接编译，<code>texlive2019</code>需要把其中的颜色名称<code>tcbcol@back</code>改为<code>tcbcolback</code>。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">TikZ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/18/imo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-<!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-
-  
-    <article id="post-平面几何绘图示例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/14/平面几何绘图示例/">tikz与tkz-euclide包平面几何绘图示例</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/14/平面几何绘图示例/" class="archive-article-date">
- 
-  	<time datetime="2019-07-14T12:28:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-14</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="tkz-euclide包平面几何绘图示例"><a href="#tkz-euclide包平面几何绘图示例" class="headerlink" title="tkz-euclide包平面几何绘图示例"></a>tkz-euclide包平面几何绘图示例</h1><p>这是我最近读法语平面几何绘图包tkz-euclide，从中把一些典型的例子挖出来。以前用tikz作图，平面几何作图确实是一大难题，现在发现了这个tkz-euclide包刚好弥补了tikz的这点。<br><a href="https://yuxtech.github.io/tex/tkz-euclide.tex">tkz-euclide包平面几何绘图.tex</a><br><a href="https://yuxtech.github.io/tex/tkz-euclide包平面几何绘图.pdf">tkz-euclide包平面几何绘图.pdf</a><br>
-
-	<div class="row">
-    <embed src="https://yuxtech.github.io/tex/tkz-euclide包平面几何绘图.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">TikZ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/14/平面几何绘图示例/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-<!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-
-  
-    <article id="post-geo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/10/geo/">tikz与tkz-euclide包绘制平面几何图形</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/10/geo/" class="archive-article-date">
- 
-  	<time datetime="2019-07-10T04:28:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-10</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://yuxtech.github.io/tex/geometry.pdf">tikz与tkz-euclide包绘制平面几何图形</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[tikz]&#123;standalone&#125;</span><br><span class="line">\usepackage&#123;newtxmath&#125;</span><br><span class="line">\usepackage&#123;tkz-euclide&#125;</span><br><span class="line">\usetkzobj&#123;all&#125;</span><br><span class="line">\usetikzlibrary&#123;arrows.meta,intersections&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\def\n&#123;1.25&#125;</span><br><span class="line">\begin&#123;tikzpicture&#125;[&gt;=Stealth,semithick,scale=0.6]</span><br><span class="line">\draw[-&gt;](-8,0)--(0,0)coordinate(O)node[below left]&#123;$O$&#125;--(8,0)node[below]&#123;$x$&#125;;</span><br><span class="line">\draw[-&gt;](0,-1.5)--(0,10)node[left]&#123;$y$&#125;;</span><br><span class="line">\draw[samples=200,domain=-0.5:1.33]plot(&#123;1.2*sec(\x r)&#125;,&#123;2.4*tan(\x r)&#125;);</span><br><span class="line">\draw[samples=200,domain=-0.5:1.33,xscale=-1]plot(&#123;1.2*sec(\x r)&#125;,&#123;2.4*tan(\x r)&#125;);</span><br><span class="line">\fill(&#123;1.2*sec(\n r)&#125;,&#123;2.4*tan(\n r)&#125;)coordinate(P)node[left]&#123;$P$&#125;circle(1pt);</span><br><span class="line">\fill(2.64,0)coordinate(F2)node[below]&#123;$F_2$&#125;circle(1pt)</span><br><span class="line">(-2.64,0)coordinate(F1)node[below]&#123;$F_1$&#125;circle(1pt)(O)circle(1pt);</span><br><span class="line">\draw(F1)--(P)--(F2);</span><br><span class="line">\tkzInCenter(P,F1,F2)\tkzGetPoint&#123;I&#125;</span><br><span class="line">\fill(I)node[left]&#123;$I$&#125;circle(1pt);</span><br><span class="line">\tkzDefPointBy[projection=onto F1--F2](I)</span><br><span class="line">\tkzGetPoint&#123;D&#125;</span><br><span class="line">\tkzDefPointBy[projection=onto P--F2](I)</span><br><span class="line">\tkzGetPoint&#123;E&#125;</span><br><span class="line">\tkzDefPointBy[projection=onto F1--P](I)</span><br><span class="line">\tkzGetPoint&#123;F&#125;</span><br><span class="line">\tkzDrawCircle[color=magenta,dashed](I,D)</span><br><span class="line">\draw(D)--(I)--(E)(I)--(F);</span><br><span class="line">\fill(D)circle(1pt)(E)circle(1pt)(F)circle(1pt);</span><br><span class="line">\tkzMarkRightAngle[fill=cyan!10](I,D,F1)</span><br><span class="line">\tkzMarkRightAngle[fill=cyan!10](I,E,P)</span><br><span class="line">\tkzMarkRightAngle[fill=cyan!10](I,F,F1)</span><br><span class="line">\end&#123;tikzpicture&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">TikZ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/10/geo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-<!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-
-  
-    <article id="post-huaji" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/19/huaji/">用tikz绘制滑稽图像</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/19/huaji/" class="archive-article-date">
- 
-  	<time datetime="2019-06-19T06:59:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-19</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="滑稽表情的tikz作图"><a href="#滑稽表情的tikz作图" class="headerlink" title="滑稽表情的tikz作图"></a>滑稽表情的tikz作图</h1><p><a href="https://yuxtech.github.io/tex/huaji.pdf">滑稽.pdf</a><br>好不容易找到了一张滑稽的SVG矢量图,利用inkscape生成了tikz代码，下面的代码用于生成高清无码的滑稽<br>转载请注明出处，谢谢！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;article&#125;</span><br><span class="line">\usepackage[utf8]&#123;inputenc&#125;</span><br><span class="line">\usepackage&#123;tikz&#125;</span><br><span class="line"></span><br><span class="line">\usepackage[active,tightpage]&#123;preview&#125;</span><br><span class="line">\PreviewEnvironment&#123;tikzpicture&#125;</span><br><span class="line"></span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\definecolor&#123;cF9DD10&#125;&#123;RGB&#125;&#123;249,221,16&#125;</span><br><span class="line">\definecolor&#123;cEFEFEF&#125;&#123;RGB&#125;&#123;239,239,239&#125;</span><br><span class="line">\definecolor&#123;cFBB03B&#125;&#123;RGB&#125;&#123;251,176,59&#125;</span><br><span class="line">\definecolor&#123;c42210B&#125;&#123;RGB&#125;&#123;66,33,11&#125;</span><br><span class="line">\definecolor&#123;cFB943B&#125;&#123;RGB&#125;&#123;251,148,59&#125;</span><br><span class="line">\definecolor&#123;c1A1A1A&#125;&#123;RGB&#125;&#123;26,26,26&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">\begin&#123;tikzpicture&#125;[y=0.80pt,x=0.80pt,yscale=-1, inner sep=0pt, outer sep=0pt]</span><br><span class="line">\path[fill=cF9DD10] (244.7832,528.3646) .. controls (244.7832,691.7943) and</span><br><span class="line">  (377.2898,824.3009) .. (540.7194,824.3009) .. controls (704.1490,824.3009) and</span><br><span class="line">  (836.6556,691.7943) .. (836.6556,528.3646) .. controls (836.6556,364.9350) and</span><br><span class="line">  (704.1490,232.4284) .. (540.7194,232.4284) .. controls (377.2898,232.4284) and</span><br><span class="line">  (244.7832,364.9350) .. (244.7832,528.3646) -- cycle(244.7832,528.3646);</span><br><span class="line">\path[fill=cEFEFEF] (837.2336,399.4705) .. controls (783.4073,333.1450) and</span><br><span class="line">  (650.4672,339.3585) .. (560.5159,412.3311) .. controls (550.6899,423.6743) and</span><br><span class="line">  (551.7737,440.6531) .. (562.8279,450.1901) .. controls (573.8822,459.7271) and</span><br><span class="line">  (590.7887,458.2098) .. (600.5424,446.7943) .. controls (665.5675,393.9795) and</span><br><span class="line">  (761.9491,389.7890) .. (801.1086,438.0521) .. controls (812.0906,448.3116) and</span><br><span class="line">  (829.0694,447.9503) .. (838.9676,437.3296) .. controls (849.0104,426.6366) and</span><br><span class="line">  (848.1434,409.7301) .. (837.2336,399.4705) -- cycle(837.2336,399.4705);</span><br><span class="line">\path[fill=cFBB03B] (579.7344,458.3543) .. controls (573.0152,458.3543) and</span><br><span class="line">  (566.5849,455.9701) .. (561.5274,451.6351) .. controls (549.6784,441.4478) and</span><br><span class="line">  (548.5224,423.2408) .. (559.0709,411.0306) -- (559.2154,410.8861) --</span><br><span class="line">  (559.3599,410.7416) .. controls (602.5654,375.7003) and (658.3425,354.1698) ..</span><br><span class="line">  (712.3855,351.6410) .. controls (738.3955,350.4128) and (763.3941,353.8085) ..</span><br><span class="line">  (784.6356,361.3225) .. controls (807.1776,369.3423) and (825.3846,381.6970) ..</span><br><span class="line">  (838.6786,398.0255) .. controls (844.2419,403.2275) and (847.5654,410.4526) ..</span><br><span class="line">  (847.9266,418.0388) .. controls (848.3601,425.6251) and (845.6146,432.9946) ..</span><br><span class="line">  (840.4849,438.5578) .. controls (835.2829,444.1211) and (828.1301,447.3001) ..</span><br><span class="line">  (820.5439,447.3723) .. controls (812.8853,447.5168) and (805.4436,444.6268) ..</span><br><span class="line">  (799.8081,439.3526) -- (799.5913,439.1358) .. controls (781.3121,416.6661) and</span><br><span class="line">  (748.8718,404.6725) .. (710.6515,406.3343) .. controls (672.2145,407.9960) and</span><br><span class="line">  (632.6215,423.2408) .. (601.9152,448.0948) .. controls (596.3519,454.6696) and</span><br><span class="line">  (588.2599,458.3543) .. (579.7344,458.3543) -- cycle(561.8887,413.7761) ..</span><br><span class="line">  controls (552.9297,424.3246) and (553.8689,439.9306) .. (564.0562,448.6728) ..</span><br><span class="line">  controls (574.2434,457.4151) and (589.9217,456.0423) .. (599.0252,445.4938) --</span><br><span class="line">  (599.1697,445.3493) -- (599.3142,445.2048) .. controls (630.6707,419.7728) and</span><br><span class="line">  (671.1307,404.2390) .. (710.5070,402.5050) .. controls (749.9555,400.7710) and</span><br><span class="line">  (783.5518,413.1981) .. (802.6258,436.6793) .. controls (807.4666,441.1588) and</span><br><span class="line">  (813.8246,443.6153) .. (820.4716,443.5431) .. controls (826.9741,443.4708) and</span><br><span class="line">  (833.1876,440.7253) .. (837.6671,435.9568) .. controls (842.1466,431.1883) and</span><br><span class="line">  (844.4586,424.8303) .. (844.0974,418.3278) .. controls (843.7361,411.6808) and</span><br><span class="line">  (840.8461,405.3950) .. (835.9331,400.9155) -- (835.7886,400.6988) .. controls</span><br><span class="line">  (810.5733,369.5590) and (765.6338,353.1583) .. (712.6745,355.6148) .. controls</span><br><span class="line">  (659.3540,358.1435) and (604.4439,379.3128) .. (561.8887,413.7761) --</span><br><span class="line">  cycle(561.8887,413.7761);</span><br><span class="line">\path[fill=cEFEFEF] (519.0444,407.4903) .. controls (465.6516,340.8035) and</span><br><span class="line">  (332.7115,346.1500) .. (242.3267,418.5446) .. controls (232.4284,429.8878) and</span><br><span class="line">  (233.3677,446.7943) .. (244.3497,456.4036) .. controls (255.3317,466.0128) and</span><br><span class="line">  (272.2382,464.5678) .. (282.1365,453.2968) .. controls (347.5228,400.9155) and</span><br><span class="line">  (443.9043,397.3030) .. (482.7749,445.8551) .. controls (493.6846,456.1868) and</span><br><span class="line">  (510.6634,455.9701) .. (520.6339,445.3493) .. controls (530.6766,434.7286) and</span><br><span class="line">  (529.9541,417.7498) .. (519.0444,407.4903) -- cycle(519.0444,407.4903);</span><br><span class="line">\path[fill=cFBB03B] (261.4007,464.7123) .. controls (246.5172,464.7123) and</span><br><span class="line">  (234.2347,453.0801) .. (233.5122,438.1966) .. controls (233.0787,430.5381) and</span><br><span class="line">  (235.7519,423.0241) .. (240.8094,417.2441) -- (240.9539,417.0996) --</span><br><span class="line">  (241.0984,416.9551) .. controls (284.5207,382.2028) and (340.4423,361.0335) ..</span><br><span class="line">  (394.4853,358.8660) .. controls (420.4953,357.8545) and (445.4216,361.3225) ..</span><br><span class="line">  (466.6631,369.0533) .. controls (489.1329,377.2175) and (507.2676,389.6445) ..</span><br><span class="line">  (520.4894,406.1175) .. controls (532.0494,417.1718) and (532.7719,435.3066) ..</span><br><span class="line">  (522.0789,446.6498) .. controls (516.7324,452.2131) and (509.3629,455.3921) ..</span><br><span class="line">  (501.7044,455.3198) .. controls (494.1904,455.3198) and (486.8931,452.4298) ..</span><br><span class="line">  (481.4021,447.2278) -- (481.1854,447.0111) .. controls (463.0506,424.3968) and</span><br><span class="line">  (430.7548,412.1866) .. (392.4623,413.6316) .. controls (354.0253,415.0766) and</span><br><span class="line">  (314.2877,430.0323) .. (283.5092,454.6696) .. controls (278.5240,460.3773) and</span><br><span class="line">  (271.4434,463.9898) .. (263.8572,464.5678) .. controls (262.9902,464.7123) and</span><br><span class="line">  (262.1954,464.7123) .. (261.4007,464.7123) -- cycle(243.6994,419.9896) ..</span><br><span class="line">  controls (239.3644,424.9748) and (237.1247,431.4051) .. (237.4859,437.9798) ..</span><br><span class="line">  controls (237.7749,444.4823) and (240.7372,450.6236) .. (245.6502,454.8863) ..</span><br><span class="line">  controls (250.5632,459.1491) and (256.9934,461.2443) .. (263.4959,460.6663) ..</span><br><span class="line">  controls (270.1429,460.0883) and (276.2842,456.9816) .. (280.6192,451.9241) --</span><br><span class="line">  (280.7637,451.7796) -- (280.9082,451.6351) .. controls (312.4092,426.4198) and</span><br><span class="line">  (353.0138,411.1028) .. (392.3178,409.6578) .. controls (431.8386,408.2128) and</span><br><span class="line">  (465.2903,420.8566) .. (484.2199,444.4101) .. controls (488.9161,448.8896) and</span><br><span class="line">  (495.2019,451.3461) .. (501.7044,451.3461) .. controls (508.3514,451.4183) and</span><br><span class="line">  (514.6371,448.6728) .. (519.2611,443.9043) .. controls (528.5091,434.1506) and</span><br><span class="line">  (527.8589,418.4001) .. (517.7439,408.8630) -- (517.5271,408.6463) .. controls</span><br><span class="line">  (492.4564,377.3620) and (447.6613,360.6723) .. (394.6298,362.7675) .. controls</span><br><span class="line">  (341.4537,364.9350) and (286.4715,385.7430) .. (243.6994,419.9896) --</span><br><span class="line">  cycle(243.6994,419.9896);</span><br><span class="line">\path[fill=c42210B] (262.2677,413.8483) .. controls (262.2677,424.0356) and</span><br><span class="line">  (267.6864,433.4281) .. (276.5010,438.5578) .. controls (285.3155,443.6153) and</span><br><span class="line">  (296.1530,443.6153) .. (304.9675,438.5578) .. controls (313.7820,433.5003) and</span><br><span class="line">  (319.2007,424.0356) .. (319.2007,413.8483) .. controls (319.2007,403.6610) and</span><br><span class="line">  (313.7820,394.2685) .. (304.9675,389.1388) .. controls (296.1530,384.0813) and</span><br><span class="line">  (285.3155,384.0813) .. (276.5010,389.1388) .. controls (267.6864,394.2685) and</span><br><span class="line">  (262.2677,403.6610) .. (262.2677,413.8483) --</span><br><span class="line">  cycle(262.2677,413.8483)(575.1104,410.4526) .. controls (575.1104,420.6398)</span><br><span class="line">  and (580.5292,430.0323) .. (589.3437,435.1621) .. controls (598.1582,440.2196)</span><br><span class="line">  and (608.9957,440.2196) .. (617.8102,435.1621) .. controls (626.6247,430.1046)</span><br><span class="line">  and (632.0435,420.6398) .. (632.0435,410.4526) .. controls (632.0435,400.2653)</span><br><span class="line">  and (626.6247,390.8728) .. (617.8102,385.7430) .. controls (608.9957,380.6855)</span><br><span class="line">  and (598.1582,380.6855) .. (589.3437,385.7430) .. controls (580.5292,390.8728)</span><br><span class="line">  and (575.1104,400.3375) .. (575.1104,410.4526) -- cycle(575.1104,410.4526);</span><br><span class="line">\path[fill=cFB943B] (290.8065,480.8964) .. controls (290.8065,494.4071) and</span><br><span class="line">  (318.9117,505.3891) .. (353.5918,505.3891) .. controls (388.2718,505.3891) and</span><br><span class="line">  (416.3771,494.4071) .. (416.3771,480.8964) .. controls (416.3771,467.3856) and</span><br><span class="line">  (388.2718,456.4036) .. (353.5918,456.4036) .. controls (318.9117,456.4036) and</span><br><span class="line">  (290.8065,467.3856) .. (290.8065,480.8964) --</span><br><span class="line">  cycle(290.8065,480.8964)(667.3015,480.8964) .. controls (667.3015,489.6386)</span><br><span class="line">  and (679.2950,497.7306) .. (698.6580,502.1379) .. controls (718.0933,506.5451)</span><br><span class="line">  and (742.0080,506.5451) .. (761.4433,502.1379) .. controls (780.8786,497.7306)</span><br><span class="line">  and (792.7998,489.7109) .. (792.7998,480.8964) .. controls (792.7998,472.1541)</span><br><span class="line">  and (780.8063,464.0621) .. (761.4433,459.6548) .. controls (742.0803,455.2476)</span><br><span class="line">  and (718.0933,455.2476) .. (698.6580,459.6548) .. controls (679.2227,464.0621)</span><br><span class="line">  and (667.3015,472.1541) .. (667.3015,480.8964) -- cycle(667.3015,480.8964);</span><br><span class="line">\path[fill=c42210B] (772.5698,566.2237) .. controls (750.3890,665.7120) and</span><br><span class="line">  (654.6577,740.4908) .. (539.8524,740.4908) .. controls (428.7318,740.4908) and</span><br><span class="line">  (335.3847,670.3360) .. (309.4470,575.6162) -- (309.0135,575.6884) .. controls</span><br><span class="line">  (320.8625,681.6070) and (419.7006,764.3333) .. (539.8524,764.3333) .. controls</span><br><span class="line">  (663.6167,764.3333) and (764.6946,676.6217) .. (771.5583,566.1514);</span><br><span class="line">\path[fill=c1A1A1A] (438.1243,333.2895) .. controls (422.0848,315.9495) and</span><br><span class="line">  (401.4935,305.5455) .. (379.0960,305.5455) .. controls (356.3373,305.5455) and</span><br><span class="line">  (335.4570,316.3107) .. (319.2730,334.1565) .. controls (329.3157,300.6325) and</span><br><span class="line">  (352.2913,277.1512) .. (379.0960,277.1512) .. controls (405.9008,277.1512) and</span><br><span class="line">  (428.8763,300.6325) .. (438.9191,334.1565)(762.4548,333.2895) .. controls</span><br><span class="line">  (746.0540,315.9495) and (725.1015,305.5455) .. (702.1983,305.5455) .. controls</span><br><span class="line">  (678.9337,305.5455) and (657.6200,316.3107) .. (641.1470,334.1565) .. controls</span><br><span class="line">  (651.4065,300.6325) and (674.8877,277.1512) .. (702.1983,277.1512) .. controls</span><br><span class="line">  (729.5088,277.1512) and (753.0623,300.6325) .. (763.2496,334.1565);</span><br><span class="line"></span><br><span class="line">\end&#123;tikzpicture&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">TikZ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/19/huaji/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-<!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
-    </nav>
-  
-
 
           </div>
         </div>
@@ -1052,8 +451,8 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
