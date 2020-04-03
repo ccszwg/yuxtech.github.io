@@ -185,6 +185,96 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-etoc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/03/etoc/">etoc</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/03/etoc/" class="archive-article-date">
+ 
+  	<time datetime="2020-04-03T08:27:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
+</a>
+        
+		
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="利用etoc宏包定义目录"><a href="#利用etoc宏包定义目录" class="headerlink" title="利用etoc宏包定义目录"></a>利用<code>etoc</code>宏包定义目录</h1><p>最近读了读<code>etoc</code>宏包的说明，读了好久都读不懂，确实太复杂了，然后从其文档介绍可以发现，<code>etoc</code>包可以实现超强大的目录定制功能，远在<code>tocloft</code>和<code>titletoc</code>之上。无奈我确实读不大懂，只能从中搬运一些代码出来，然后得到一些代码格式。</p>
+<h2 id="带背景条的目录格式"><a href="#带背景条的目录格式" class="headerlink" title="带背景条的目录格式"></a>带背景条的目录格式</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">documentclass</span><span class="string">[dvipsnames]</span><span class="string">&#123;ctexbook&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;etoc,xcolor&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">[colorlinks=true,linkcolor=blue,linktoc=all]</span><span class="string">&#123;hyperref&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">setmainfont</span><span class="string">&#123;Times New Roman&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">[left=1in,right=1in]</span><span class="string">&#123;geometry&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">%\etocmulticolstyle[1]&#123;\vspace*&#123;2cm&#125;\noindent\bfseries\Large  %%此命令中的可选参数用于设置目录栏数，必选参数为目录页的title设置，对于单栏目录，建议直接注释这条命令</span></span><br><span class="line"><span class="comment">%\leaders\hrule height1pt\hfill</span></span><br><span class="line"><span class="comment">%\contentsname&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">definecolor</span><span class="string">&#123;subsecnum&#125;</span><span class="string">&#123;RGB&#125;</span><span class="string">&#123;13,151,225&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">definecolor</span><span class="string">&#123;secbackground&#125;</span><span class="string">&#123;RGB&#125;</span><span class="string">&#123;0,177,235&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">definecolor</span><span class="string">&#123;tocbackground&#125;</span><span class="string">&#123;RGB&#125;</span><span class="string">&#123;212,237,252&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span><span class="string">&#123;\etocbkgcolorcmd&#125;</span><span class="string">&#123;\color&#123;tocbackground&#125;</span></span>&#125;</span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span><span class="string">&#123;\etocleftrulecolorcmd&#125;</span><span class="string">&#123;\color&#123;tocbackground&#125;</span></span>&#125;</span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span><span class="string">&#123;\etocrightrulecolorcmd&#125;</span><span class="string">&#123;\color&#123;tocbackground&#125;</span></span>&#125;</span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span><span class="string">&#123;\etocbottomrulecolorcmd&#125;</span><span class="string">&#123;\color&#123;tocbackground&#125;</span></span>&#125;</span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span><span class="string">&#123;\etoctoprulecolorcmd&#125;</span><span class="string">&#123;\color&#123;tocbackground&#125;</span></span>&#125;</span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span><span class="string">&#123;\etocleftrule&#125;</span><span class="string">&#123;\vrule width 1cm&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span><span class="string">&#123;\etocrightrule&#125;</span><span class="string">&#123;\vrule width .5cm&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span><span class="string">&#123;\etocbottomrule&#125;</span><span class="string">&#123;\hrule height 12pt&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span><span class="string">&#123;\etoctoprule&#125;</span><span class="string">&#123;\hrule height 12pt&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span><span class="string">&#123;\etocinnertopsep&#125;</span><span class="string">&#123;0pt&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span><span class="string">&#123;\etocinnerbottomsep&#125;</span><span class="string">&#123;0pt&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span><span class="string">&#123;\etocinnerleftsep&#125;</span><span class="string">&#123;0pt&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span><span class="string">&#123;\etocinnerrightsep&#125;</span><span class="string">&#123;0pt&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">newcommand</span></span><span class="tag">\<span class="name">shiftedwhiterule</span><span class="string">[2]</span><span class="string">&#123;%</span></span></span><br><span class="line"><span class="tag"><span class="string">\hbox to \linewidth&#123;\color&#123;white&#125;</span></span><span class="comment">%</span></span><br><span class="line"><span class="tag">\<span class="name">hskip</span></span>#1<span class="tag">\<span class="name">leaders</span></span><span class="tag">\<span class="name">vrule</span></span> height1pt<span class="tag">\<span class="name">hfil</span></span>&#125;<span class="tag">\<span class="name">nointerlineskip</span></span><span class="tag">\<span class="name">vskip</span></span>#2&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">etocsetstyle</span><span class="string">&#123;subsubsection&#125;</span><span class="string">&#123;\etocskipfirstprefix&#125;</span></span></span><br><span class="line">&#123;<span class="tag">\<span class="name">shiftedwhiterule</span><span class="string">&#123;\leftskip&#125;</span><span class="string">&#123;6pt&#125;</span></span>&#125;</span><br><span class="line">&#123;<span class="tag">\<span class="name">heiti</span></span><span class="tag">\<span class="name">footnotesize</span></span></span><br><span class="line"><span class="tag">\<span class="name">leftskip</span></span>2.5cm<span class="tag">\<span class="name">hangindent</span></span>1cm<span class="tag">\<span class="name">rightskip</span></span>1cm<span class="tag">\<span class="name">noindent</span></span></span><br><span class="line"><span class="tag">\<span class="name">hbox</span></span> to 1cm&#123;<span class="tag">\<span class="name">color</span><span class="string">&#123;subsecnum&#125;</span></span><span class="tag">\<span class="name">etocnumber</span></span><span class="tag">\<span class="name">hss</span></span>&#125;<span class="comment">%</span></span><br><span class="line"><span class="tag">\<span class="name">color</span><span class="string">&#123;black&#125;</span></span><span class="tag">\<span class="name">etocname</span></span><span class="tag">\<span class="name">leaders</span></span><span class="tag">\<span class="name">hbox</span></span> to .2cm&#123;<span class="tag">\<span class="name">hss</span></span>.&#125;<span class="tag">\<span class="name">hfill</span></span></span><br><span class="line"><span class="tag">\<span class="name">rlap</span><span class="string">&#123;\hbox to 1cm&#123;\hss\etocpage\hskip.2cm&#125;</span></span>&#125;<span class="tag">\<span class="name">par</span></span></span><br><span class="line"><span class="tag">\<span class="name">nointerlineskip</span></span><span class="tag">\<span class="name">vskip</span></span>3pt&#125;</span><br><span class="line">&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">etocsetstyle</span><span class="string">&#123;subsection&#125;</span><span class="string">&#123;\etocskipfirstprefix&#125;</span></span></span><br><span class="line">&#123;<span class="tag">\<span class="name">shiftedwhiterule</span><span class="string">&#123;1.5cm&#125;</span><span class="string">&#123;6pt&#125;</span></span>&#125;</span><br><span class="line">&#123;<span class="tag">\<span class="name">heiti</span></span><span class="tag">\<span class="name">small</span></span></span><br><span class="line"><span class="tag">\<span class="name">leftskip</span></span>1.5cm<span class="tag">\<span class="name">hangindent</span></span>1cm<span class="tag">\<span class="name">rightskip</span></span>1cm<span class="tag">\<span class="name">noindent</span></span></span><br><span class="line"><span class="tag">\<span class="name">hbox</span></span> to 1cm&#123;<span class="tag">\<span class="name">color</span><span class="string">&#123;subsecnum&#125;</span></span><span class="tag">\<span class="name">etocnumber</span></span><span class="tag">\<span class="name">hss</span></span>&#125;<span class="comment">%</span></span><br><span class="line"><span class="tag">\<span class="name">color</span><span class="string">&#123;black&#125;</span></span><span class="tag">\<span class="name">etocname</span></span><span class="tag">\<span class="name">leaders</span></span><span class="tag">\<span class="name">hbox</span></span> to .2cm&#123;<span class="tag">\<span class="name">hss</span></span>.&#125;<span class="tag">\<span class="name">hfill</span></span></span><br><span class="line"><span class="tag">\<span class="name">rlap</span><span class="string">&#123;\hbox to 1cm&#123;\hss\etocpage\hskip.2cm&#125;</span></span>&#125;<span class="tag">\<span class="name">par</span></span></span><br><span class="line"><span class="tag">\<span class="name">nointerlineskip</span></span><span class="tag">\<span class="name">vskip</span></span>6pt&#125;</span><br><span class="line">&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">etocsetstyle</span><span class="string">&#123;chapter&#125;</span><span class="string">&#123;\etocskipfirstprefix&#125;</span></span></span><br><span class="line">&#123;<span class="tag">\<span class="name">shiftedwhiterule</span><span class="string">&#123;0cm&#125;</span><span class="string">&#123;6pt&#125;</span></span>&#125;</span><br><span class="line">&#123;<span class="tag">\<span class="name">large</span></span><span class="tag">\<span class="name">etocsavedchaptertocline</span><span class="string">&#123;\numberline&#123;\etocnumber&#125;</span></span><span class="tag">\<span class="name">etocname</span></span>&#125;&#123;<span class="tag">\<span class="name">etocpage</span></span>&#125;<span class="tag">\<span class="name">par</span></span></span><br><span class="line"><span class="tag">\<span class="name">nointerlineskip</span></span><span class="tag">\<span class="name">vskip</span></span>6pt&#125;</span><br><span class="line">&#123;&#125;<span class="comment">%</span></span><br><span class="line"><span class="tag">\<span class="name">etocsetstyle</span><span class="string">&#123;section&#125;</span><span class="string">&#123;&#125;</span><span class="string">&#123;&#125;</span></span></span><br><span class="line">&#123;<span class="tag">\<span class="name">etocsavedsectiontocline</span><span class="string">&#123;\numberline&#123;\etocnumber&#125;</span></span><span class="tag">\<span class="name">etocname</span></span>&#125;&#123;<span class="tag">\<span class="name">etocpage</span></span>&#125;&#125;&#123;&#125;<span class="comment">%</span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">newcommand</span><span class="string">&#123;\coloredstuff&#125;</span><span class="string">[2]</span><span class="string">&#123;%</span></span></span><br><span class="line"><span class="tag"><span class="string">\leftskip0pt\rightskip0pt\parskip0pt</span></span></span><br><span class="line"><span class="tag"><span class="string">\fboxsep0pt % \colorbox uses \fboxsep also when no frame!</span></span></span><br><span class="line"><span class="tag"><span class="string">\noindent\colorbox&#123;secbackground&#125;</span></span></span><br><span class="line">&#123;<span class="tag">\<span class="name">parbox</span><span class="string">&#123;\linewidth&#125;</span><span class="string">&#123;%</span></span></span><br><span class="line"><span class="tag"><span class="string">\vskip5pt</span></span></span><br><span class="line"><span class="tag"><span class="string">&#123;\noindent\color&#123;#1&#125;</span></span>#2<span class="tag">\<span class="name">par</span></span>&#125;<span class="tag">\<span class="name">nointerlineskip</span></span></span><br><span class="line"><span class="tag">\<span class="name">vskip</span></span>3pt&#125;&#125;<span class="comment">%</span></span><br><span class="line"><span class="tag">\<span class="name">par</span></span><span class="tag">\<span class="name">nointerlineskip</span></span>&#125;</span><br><span class="line"><span class="tag">\<span class="name">etocsetstyle</span><span class="string">&#123;section&#125;</span></span></span><br><span class="line"></span><br><span class="line">&#123;<span class="tag">\<span class="name">vskip</span></span>3pt<span class="tag">\<span class="name">heiti</span></span><span class="tag">\<span class="name">small</span></span>&#125;</span><br><span class="line">&#123;<span class="tag">\<span class="name">coloredstuff</span><span class="string">&#123;black&#125;</span></span></span><br><span class="line">&#123;<span class="tag">\<span class="name">leftskip</span></span>1.5cm<span class="tag">\<span class="name">rightskip</span></span>.5cm<span class="tag">\<span class="name">parfillskip</span></span>-<span class="tag">\<span class="name">rightskip</span></span></span><br><span class="line"><span class="tag">\<span class="name">makebox</span><span class="string">[0pt]</span><span class="string">[r]</span><span class="string">&#123;\makebox[.5cm][r]&#123;\etocnumber\hspace&#123;.2cm&#125;</span></span>&#125;&#125;<span class="comment">%</span></span><br><span class="line"><span class="tag">\<span class="name">etocname</span></span><span class="tag">\<span class="name">hfill</span></span><span class="tag">\<span class="name">makebox</span><span class="string">[.5cm]</span><span class="string">[r]</span><span class="string">&#123;\etocpage\hspace&#123;.2cm&#125;</span></span>&#125;&#125;<span class="comment">%</span></span><br><span class="line"><span class="tag">\<span class="name">vskip</span></span>6pt &#125;</span><br><span class="line">&#123;&#125;</span><br><span class="line"><span class="comment">%\etocframedstyle[1]&#123;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;document&#125;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">tableofcontents</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">chapter</span><span class="string">&#123;chapter1&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;sec1&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">subsection</span><span class="string">&#123;subsec1&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">subsection</span><span class="string">&#123;subsec2&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">chapter</span><span class="string">&#123;chapter2&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;sec2&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">subsection</span><span class="string">&#123;subsec1&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">subsection</span><span class="string">&#123;subsec2&#125;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;document&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>它可以用命令<code>\etocmulticolstyle</code>实现双栏目录，具体已经在代码中给了注，其单双栏目录效果如下</p>
+<div align="center">
+  <img width="400" src="https://yuxtech.github.io/img/danlan.png">
+  <img width="400" src="https://yuxtech.github.io/img/shuanglan.png">
+</div>
+
+
+
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LaTeX</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/03/etoc/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+<!-- 目录内容 -->
+             
+        <!-- 目录内容结束 -->
+
+  
     <article id="post-zhenti" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -935,86 +1025,6 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
         <!-- 目录内容结束 -->
 
   
-    <article id="post-toc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/23/toc/">定制一个目录格式</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/23/toc/" class="archive-article-date">
- 
-  	<time datetime="2019-09-23T07:52:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-23</time>
-</a>
-        
-		
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="利用titlesec-tocloft-tikz包定制一个目录格式"><a href="#利用titlesec-tocloft-tikz包定制一个目录格式" class="headerlink" title="利用titlesec, tocloft, tikz包定制一个目录格式"></a>利用<code>titlesec</code>, <code>tocloft</code>, <code>tikz</code>包定制一个目录格式</h1><p>如何在<code>LaTeX</code>中实现以下目录格式<br><img src="https://yuxtech.github.io/img/toc1.jpg" alt="mulu"><br>我查阅了很多包的说明，勉强做出一点形式，但是并没有完全解决这个问题，现在给出一种定制的目录格式，涉及到<code>etoolbox</code>包的一些打补丁挂钩子的方法：<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">documentclass</span><span class="string">[openany]</span><span class="string">&#123;ctexbook&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;multicol,etoolbox&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;titletoc,titlesec,xcolor&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">[hidelinks]</span><span class="string">&#123;hyperref&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">[centering,</span></span></span><br><span class="line"><span class="tag"><span class="string">           top=2.54cm,bottom=2.54cm,right=2.9cm,left=2.9cm,</span></span></span><br><span class="line"><span class="tag"><span class="string">           headsep=25pt,headheight=20pt]</span><span class="string">&#123;geometry&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;xcolor&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;pgfornament&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">definecolor</span><span class="string">&#123;myred&#125;</span><span class="string">&#123;RGB&#125;</span><span class="string">&#123;127,0,0&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">definecolor</span><span class="string">&#123;myyellow&#125;</span><span class="string">&#123;RGB&#125;</span><span class="string">&#123;169,121,69&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">definecolor</span><span class="string">&#123;gray75&#125;</span><span class="string">&#123;gray&#125;</span><span class="string">&#123;0.75&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">titleformat</span><span class="string">&#123;\chapter&#125;</span></span><span class="comment">% Command</span></span><br><span class="line">  [hang]<span class="comment">% Shape</span></span><br><span class="line">  &#123;<span class="tag">\<span class="name">Huge</span></span><span class="tag">\<span class="name">bfseries</span></span><span class="tag">\<span class="name">color</span><span class="string">&#123;myred&#125;</span></span>&#125;<span class="comment">% Format</span></span><br><span class="line">  &#123;<span class="tag">\<span class="name">protect</span><span class="string">&#123;\color&#123;myyellow&#125;</span></span><span class="tag">\<span class="name">thechapter</span></span><span class="tag">\<span class="name">hfil</span></span>&#125;&#125;<span class="comment">% Label</span></span><br><span class="line">  &#123;1em&#125;<span class="comment">% Sep</span></span><br><span class="line">  &#123;&#125;<span class="comment">% Before-Code</span></span><br><span class="line">  [<span class="tag">\<span class="name">ifnum</span></span><span class="tag">\<span class="name">value</span><span class="string">&#123;chapter&#125;</span></span>&gt;0 <span class="tag">\<span class="name">addtocontents</span><span class="string">&#123;toc&#125;</span><span class="string">&#123;\protect\begin&#123;multicols&#125;</span><span class="string">&#123;2&#125;</span></span>&#125;<span class="tag">\<span class="name">fi</span></span>]<span class="comment">% After-Code</span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">pretocmd</span><span class="string">&#123;\chapter&#125;</span><span class="string">&#123;\ifnum\value&#123;chapter&#125;</span></span>&gt;0 <span class="tag">\<span class="name">addtocontents</span><span class="string">&#123;toc&#125;</span><span class="string">&#123;\protect\end&#123;multicols&#125;</span></span>&#125;<span class="tag">\<span class="name">fi</span></span>&#125;&#123;&#125;&#123;&#125;</span><br><span class="line"><span class="tag">\<span class="name">AtEndDocument</span><span class="string">&#123;\ifnum\value&#123;chapter&#125;</span></span>&gt;0 <span class="tag">\<span class="name">addtocontents</span><span class="string">&#123;toc&#125;</span><span class="string">&#123;\protect\end&#123;multicols&#125;</span></span>&#125;<span class="tag">\<span class="name">fi</span></span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span></span><span class="tag">\<span class="name">contentsname</span><span class="string">&#123;\centerline&#123;目录&#125;</span></span>&#125;</span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;tocloft&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span></span><span class="tag">\<span class="name">cftsecnumwidth</span><span class="string">&#123;1em&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;tikz&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">definecolor</span><span class="string">&#123;doc&#125;</span><span class="string">&#123;RGB&#125;</span><span class="string">&#123;0,60,110&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">definecolor</span><span class="string">&#123;myblue&#125;</span><span class="string">&#123;RGB&#125;</span><span class="string">&#123;63,200,244&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">titlecontents</span><span class="string">&#123;chapter&#125;</span><span class="string">[8em]</span></span></span><br><span class="line">&#123;<span class="tag">\<span class="name">filcenter</span></span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;tikzpicture&#125;</span><span class="string">[remember picture, overlay]</span></span><span class="comment">%</span></span><br><span class="line"><span class="tag">\<span class="name">draw</span><span class="string">[fill=myblue,draw=myblue, sharp corners]</span></span> (-<span class="tag">\<span class="name">textwidth</span></span>,-.2) rectangle (<span class="tag">\<span class="name">textwidth</span></span>,.5);<span class="comment">%</span></span><br><span class="line"><span class="tag">\<span class="name">pgftext</span><span class="string">[left,x=-2.7cm,y=0.2cm]</span><span class="string">&#123;\color&#123;black&#125;</span></span><span class="tag">\<span class="name">Large</span></span> <span class="tag">\<span class="name">heiti</span></span><span class="tag">\<span class="name">thecontentslabel</span></span>&#125;;<span class="comment">%</span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;tikzpicture&#125;</span></span><span class="tag">\<span class="name">color</span><span class="string">&#123;black&#125;</span></span><span class="tag">\<span class="name">large</span></span><span class="tag">\<span class="name">heiti</span></span><span class="tag">\<span class="name">bfseries</span></span>&#125;<span class="comment">%</span></span><br><span class="line">&#123;&#125;</span><br><span class="line">&#123;&#125;</span><br><span class="line">&#123;&#125;<span class="comment">%</span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;document&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;tikzpicture&#125;</span><span class="string">[remember picture,overlay]</span></span></span><br><span class="line"><span class="tag">\<span class="name">node</span></span> at([shift=(-114:6)]current page.north)&#123;<span class="tag">\<span class="name">pgfornament</span><span class="string">[scale=0.3,color=blue!20]</span><span class="string">&#123;78&#125;</span></span>&#125;;</span><br><span class="line"><span class="tag">\<span class="name">node</span></span> at([shift=(-66:6)]current page.north)&#123;<span class="tag">\<span class="name">pgfornament</span><span class="string">[scale=0.3,symmetry=v,color=blue!20]</span><span class="string">&#123;78&#125;</span></span>&#125;;</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;tikzpicture&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">tableofcontents</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">chapter</span><span class="string">&#123;章节&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;bar1&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;bar2&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;bar3&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;bar4&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">chapter</span><span class="string">&#123;BAR&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;foo1&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;foo2&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;foo3&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">section</span><span class="string">&#123;foo4&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;document&#125;</span></span></span><br></pre></td></tr></table></figure></p>
-<p>未解决的问题是无法做到将目录中的章名称居中用带颜色的盒子包住，退而求其次，画了一整条带子。<br><img src="https://yuxtech.github.io/img/toc2.png" alt="mulu"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LaTeX/TikZ</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/23/toc/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-<!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1153,11 +1163,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">考研</a>
+                <a href="javascript:void(0)" class="js-tag color1">LaTeX</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LaTeX</a>
+                <a href="javascript:void(0)" class="js-tag color3">考研</a>
               </li>
              
               <li class="article-tag-list-item">
