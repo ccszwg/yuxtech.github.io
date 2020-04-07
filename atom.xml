@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuxtech.github.io/"/>
-  <updated>2020-04-05T13:37:29.710Z</updated>
+  <updated>2020-04-07T00:54:19.010Z</updated>
   <id>https://yuxtech.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://yuxtech.github.io/2020/04/05/tikz/"/>
     <id>https://yuxtech.github.io/2020/04/05/tikz/</id>
     <published>2020-04-05T05:29:34.000Z</published>
-    <updated>2020-04-05T13:37:29.710Z</updated>
+    <updated>2020-04-07T00:54:19.010Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="我的tikz绘图笔记"><a href="#我的tikz绘图笔记" class="headerlink" title="我的tikz绘图笔记"></a>我的tikz绘图笔记</h1><p>这两个文件是我在学习<code>tikz</code>过程自己的绘图笔记，每一个图都是自己认真画的，或者有一些是认真读了别人的代码，再收藏过来的，但是内容比较杂，还有很多其他包的使用。今天在直播的时候，有很多人要我的笔记，我把<code>tex</code>与<code>pdf</code>文件均放于此。其中第二个文件请注释掉<code>mtpro2</code>包再编译</p><p><a href="https://yuxtech.github.io/tex/tikz.tex">tikz笔记1</a><br><a href="https://yuxtech.github.io/tex/tikz.pdf">tikz笔记1</a></p><p><a href="https://yuxtech.github.io/tex/1tikz2.tex">tikz笔记2</a><br><a href="https://yuxtech.github.io/tex/1tikz2.pdf">tikz笔记2</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="我的tikz绘图笔记"><a href="#我的tikz绘图笔记" class="headerlink" title="我的tikz绘图笔记"></a>我的tikz绘图笔记</h1><p>这两个文件是我在学习<code>tikz</code>过程自己的绘图笔记，每一个图都是自己认真画的，或者有一些是认真读了别人的代码，再收藏过来的，但是内容比较杂，还有很多其他包的使用。今天在直播的时候，有很多人要我的笔记，我把<code>tex</code>与<code>pdf</code>文件均放于此。</p><p><a href="https://yuxtech.github.io/tex/tikz.tex">tikz笔记1</a><br><a href="https://yuxtech.github.io/tex/tikz.pdf">tikz笔记1</a></p><p><a href="https://yuxtech.github.io/tex/1tikz2.tex">tikz笔记2</a><br><a href="https://yuxtech.github.io/tex/1tikz2.pdf">tikz笔记2</a></p>]]></content>
     
     <summary type="html">
     
